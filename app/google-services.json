@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1028608915672",
+    "project_id": "my-ghrce-app",
+    "storage_bucket": "my-ghrce-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028608915672:android:e593a8995b6ba24f0effad",
+        "android_client_info": {
+          "package_name": "bhushan.org.GHRCEUSER"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoKwyExfDRmpWDzP25dztFUeRdCeItq8M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028608915672:android:d5c3992f0b9c13ba0effad",
+        "android_client_info": {
+          "package_name": "com.alexa.GHRCEADMIN"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDoKwyExfDRmpWDzP25dztFUeRdCeItq8M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
