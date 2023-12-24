@@ -19,6 +19,7 @@ import com.google.android.material.navigation.NavigationView;
 import java.util.Objects;
 
 import bhushan.org.GHRCEUSER.ebook.EbookActivity;
+import bhushan.org.GHRCEUSER.paper.PaperActivity;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -67,7 +68,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (itemId == R.id.navigation_developer) {
             Toast.makeText(this, "Developer", Toast.LENGTH_SHORT).show();
         } else if (itemId == R.id.navigation_video) {
-            Toast.makeText(this, "Video Lecture", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "Previous Paper", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, PaperActivity.class));
         } else if (itemId == R.id.navigation_rate) {
             Toast.makeText(this, "Rate Us", Toast.LENGTH_SHORT).show();
         } else if (itemId == R.id.navigation_ebook) {

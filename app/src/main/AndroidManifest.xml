@@ -23,6 +23,13 @@
             android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
+            android:name=".paper.PaperViewerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".paper.PaperActivity"
+            android:parentActivityName=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

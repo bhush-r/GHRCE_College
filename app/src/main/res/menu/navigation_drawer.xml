@@ -2,11 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/navigation_video"
-        android:title="Video Lecture"
-        android:icon="@drawable/ic_video"/>
+        android:title="Previous Paper"
+        android:icon="@drawable/ic_paper"/>
 
     <item android:id="@+id/navigation_ebook"
-        android:title="Ebooks"
+        android:title="ENotes"
         android:icon="@drawable/ic_ebook"/>
 
     <item android:id="@+id/navigation_theme"
@@ -30,7 +30,7 @@
         android:icon="@drawable/ic_developer"/>
 
     <item android:id="@+id/navigation_notes"
-        android:title="Notes"
-        android:icon="@drawable/ic_developer"/>
+        android:title="Vedio Lecture"
+        android:icon="@drawable/ic_video"/>
 
 </menu>
