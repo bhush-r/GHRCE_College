@@ -1,7 +1,10 @@
 package bhushan.org.GHRCEUSER.ebook;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -31,6 +34,7 @@ public class EbookActivity extends AppCompatActivity {
     LinearLayout shimmerLayout;
 
     ShimmerFrameLayout shimmerFrameLayout;
+    EditText search;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +49,7 @@ public class EbookActivity extends AppCompatActivity {
 
         shimmerFrameLayout = findViewById(R.id.shimmer_view_container);
         shimmerLayout = findViewById(R.id.shimmer_layout);
+        search = findViewById(R.id.searchText);
         getData();
 
     }
@@ -64,6 +69,7 @@ public class EbookActivity extends AppCompatActivity {
                 ebookRecycler.setAdapter(adapter);
                 shimmerFrameLayout.stopShimmer();
                 shimmerLayout.setVisibility(View.GONE);
+                search.setVisibility(View.VISIBLE);
             }
 
             @Override
@@ -71,6 +77,36 @@ public class EbookActivity extends AppCompatActivity {
                 Toast.makeText(EbookActivity.this,databaseError.getMessage(),Toast.LENGTH_SHORT).show();
             }
         });
+        search.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                filter(editable.toString());
+
+            }
+        });
+    }
+
+    private void filter(String text) {
+        ArrayList<EbookData> filterlist = new ArrayList<>();
+        for (EbookData item : list){
+            //getName -> getPDFTitle used mein ne declare yahi kiya ek baar admin or user mein check karna
+            if (item.getPdfTitle().toLowerCase().contains(text.toLowerCase())){
+                filterlist.add(item);
+
+            }
+        }
+
+        adapter.Filteredlist(filterlist);
     }
 
     @Override

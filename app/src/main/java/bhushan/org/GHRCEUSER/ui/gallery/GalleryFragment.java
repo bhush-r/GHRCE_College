@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import bhushan.org.GHRCEUSER.R;
 public class GalleryFragment extends Fragment {
-    RecyclerView convocationRecycler,independenceRecycler, annualRecycler,otherRecycler,workshopsRecycler, festRecycler, campusRecycler, sportsRecycler;
+    RecyclerView convocationRecycler,independenceRecycler, annualRecycler,otherRecycler,workshopsRecycler, festRecycler, campusRecycler, sportsRecycler, placementsRecycler;
     GalleryAdapter adapter;
     DatabaseReference reference;
     @Override
@@ -38,6 +38,7 @@ public class GalleryFragment extends Fragment {
         campusRecycler = view.findViewById(R.id.campusRecycler);
         workshopsRecycler = view.findViewById(R.id.workshopsRecycler);
         independenceRecycler = view.findViewById(R.id.independenceRecycler);
+        placementsRecycler = view.findViewById(R.id.placementsRecycler);
 
         reference = FirebaseDatabase.getInstance().getReference().child("gallery");
 
@@ -49,6 +50,7 @@ public class GalleryFragment extends Fragment {
         getOtherImage();
         getAnnualImage();
         getWorkshopsImage();
+        getPlacementsImage();
 
 
         return view;
@@ -182,6 +184,26 @@ public class GalleryFragment extends Fragment {
                 adapter = new GalleryAdapter(getContext(),imageList);
                 workshopsRecycler.setLayoutManager(new GridLayoutManager(getContext(),3));
                 workshopsRecycler.setAdapter(adapter);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void getPlacementsImage() {
+        reference.child("Placements").addValueEventListener(new ValueEventListener() {
+            List<String> imageList = new ArrayList<>();
+            @Override
+            public void onDataChange(@NonNull DataSnapshot datasnapshot) {
+                for (DataSnapshot snapshot: datasnapshot.getChildren()){
+                    String data = (String) snapshot.getValue();
+                    imageList.add(data);
+                }
+                adapter = new GalleryAdapter(getContext(),imageList);
+                placementsRecycler.setLayoutManager(new GridLayoutManager(getContext(),3));
+                placementsRecycler.setAdapter(adapter);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {

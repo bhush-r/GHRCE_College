@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import bhushan.org.GHRCEUSER.R;
@@ -70,6 +71,11 @@ public class PaperAdapter extends RecyclerView.Adapter<PaperAdapter.PaperViewHol
     @Override
     public int getItemCount() {
         return list.size();
+    }
+
+    public void Filteredlist(ArrayList<PaperData> filterlist) {
+        list = filterlist;
+        notifyDataSetChanged();
     }
 
     public class PaperViewHolder extends RecyclerView.ViewHolder {

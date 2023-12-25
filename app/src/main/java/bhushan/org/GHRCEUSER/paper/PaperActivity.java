@@ -1,7 +1,10 @@
 package bhushan.org.GHRCEUSER.paper;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -21,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bhushan.org.GHRCEUSER.R;
+import bhushan.org.GHRCEUSER.ebook.EbookData;
 
 public class PaperActivity extends AppCompatActivity {
 
@@ -32,6 +36,7 @@ public class PaperActivity extends AppCompatActivity {
     LinearLayout shimmerLayout;
 
     ShimmerFrameLayout shimmerFrameLayout;
+    EditText search;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +51,7 @@ public class PaperActivity extends AppCompatActivity {
 
         shimmerFrameLayout = findViewById(R.id.shimmer_view_container);
         shimmerLayout = findViewById(R.id.shimmer_layout);
+        search = findViewById(R.id.searchText1);
         getData();
 
     }
@@ -65,6 +71,7 @@ public class PaperActivity extends AppCompatActivity {
                 paperRecycler.setAdapter(adapter);
                 shimmerFrameLayout.stopShimmer();
                 shimmerLayout.setVisibility(View.GONE);
+                search.setVisibility(View.VISIBLE);
             }
 
             @Override
@@ -72,6 +79,36 @@ public class PaperActivity extends AppCompatActivity {
                 Toast.makeText(PaperActivity.this,databaseError.getMessage(),Toast.LENGTH_SHORT).show();
             }
         });
+        search.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                filter(editable.toString());
+
+            }
+        });
+    }
+
+    private void filter(String text) {
+        ArrayList<PaperData> filterlist = new ArrayList<>();
+        for (PaperData item : list){
+            //getName -> getPDFTitle used mein ne declare yahi kiya ek baar admin or user mein check karna
+            if (item.getPaperTitle().toLowerCase().contains(text.toLowerCase())){
+                filterlist.add(item);
+
+            }
+        }
+
+        adapter.Filteredlist(filterlist);
     }
 
     @Override

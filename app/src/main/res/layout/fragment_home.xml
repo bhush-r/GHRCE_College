@@ -26,7 +26,7 @@
             <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="The GPG TALE"
+            android:text="The GHRCE"
             android:layout_marginTop="36dp"
             android:textSize="@dimen/title_size"
             android:layout_gravity="center_horizontal"
@@ -47,7 +47,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="355dp"
+                android:layout_height="495dp"
                 android:layout_marginTop="36dp"
                 android:background="@color/darkColor"
                 android:elevation="4dp">
@@ -62,7 +62,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="5dp"
                         android:fontFamily="@string/bold"
                         android:text="Departments"
                         android:textColor="#fff"
@@ -78,6 +78,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="#fff"
+                            android:layout_marginBottom="0dp"
                             android:orientation="vertical">
 
                             <TextView
@@ -88,7 +89,7 @@
                                 android:layout_marginHorizontal="@dimen/text_margin"
                                 android:layout_marginTop="@dimen/text_margin"
                                 android:fontFamily="@string/light"
-                                android:text="Computer Science and Engineering "
+                                android:text="Computer Science &amp; Engineering "
                                 android:textColor="@color/textColor"
                                 android:textSize="@dimen/text_size" />
 
@@ -105,25 +106,7 @@
                                 android:layout_marginHorizontal="@dimen/text_margin"
                                 android:layout_marginTop="@dimen/text_margin"
                                 android:fontFamily="@string/light"
-                                android:text="Mechanical Engineering "
-                                android:textColor="@color/textColor"
-                                android:textSize="@dimen/text_size" />
-
-                            <View
-                                android:layout_width="match_parent"
-                                android:layout_height="1dp"
-                                android:background="@color/grey" />
-
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_horizontal"
-                                android:layout_margin="8dp"
-                                android:layout_marginHorizontal="@dimen/text_margin"
-                                android:layout_marginTop="@dimen/text_margin"
-                                android:fontFamily="@string/light"
-                                android:text="Information Technology Engineering"
+                                android:text="Information Technology"
                                 android:textColor="@color/textColor"
                                 android:textSize="@dimen/text_size" />
 
@@ -141,7 +124,25 @@
                                 android:layout_marginHorizontal="@dimen/text_margin"
                                 android:layout_marginTop="@dimen/text_margin"
                                 android:fontFamily="@string/light"
-                                android:text="Civil Engineering "
+                                android:text="Civil Engineering"
+                                android:textColor="@color/textColor"
+                                android:textSize="@dimen/text_size" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/grey" />
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_margin="8dp"
+                                android:layout_marginHorizontal="@dimen/text_margin"
+                                android:layout_marginTop="@dimen/text_margin"
+                                android:fontFamily="@string/light"
+                                android:text="Electronics &amp; Telecommunication"
                                 android:textColor="@color/textColor"
                                 android:textSize="@dimen/text_size" />
 
@@ -177,7 +178,7 @@
                                 android:layout_marginHorizontal="@dimen/text_margin"
                                 android:layout_marginTop="@dimen/text_margin"
                                 android:fontFamily="@string/light"
-                                android:text="Electronic and Tele Engineering "
+                                android:text="Electronics Engineering"
                                 android:textColor="@color/textColor"
                                 android:textSize="@dimen/text_size" />
 
@@ -185,6 +186,74 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="1dp"
                                 android:background="@color/grey" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_margin="8dp"
+                                android:layout_marginHorizontal="@dimen/text_margin"
+                                android:layout_marginTop="@dimen/text_margin"
+                                android:fontFamily="@string/light"
+                                android:text="Artificial Intelligence"
+                                android:textColor="@color/textColor"
+                                android:textSize="@dimen/text_size" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/grey" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_margin="8dp"
+                                android:layout_marginHorizontal="@dimen/text_margin"
+                                android:layout_marginTop="@dimen/text_margin"
+                                android:fontFamily="@string/light"
+                                android:text="Mechanical Engineering"
+                                android:textColor="@color/textColor"
+                                android:textSize="@dimen/text_size" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/grey" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_margin="8dp"
+                                android:layout_marginHorizontal="@dimen/text_margin"
+                                android:layout_marginTop="@dimen/text_margin"
+                                android:fontFamily="@string/light"
+                                android:text="Management Studies (MBA)"
+                                android:textColor="@color/textColor"
+                                android:textSize="@dimen/text_size" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/grey" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_margin="8dp"
+                                android:layout_marginHorizontal="@dimen/text_margin"
+                                android:layout_marginTop="@dimen/text_margin"
+                                android:fontFamily="@string/light"
+                                android:text="Data Science,IoT &amp; Cyber Security"
+                                android:textColor="@color/textColor"
+                                android:textSize="@dimen/text_size" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/grey"/>
 
 
                         </LinearLayout>
@@ -199,62 +268,64 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:elevation="4dp"
                 android:orientation="vertical"
-                android:padding="16dp"
-                android:elevation="4dp">
+                android:padding="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Contact Details"
-                    android:layout_marginTop="36dp"
-                    android:textSize="@dimen/title_size"
                     android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="36dp"
+                    android:fontFamily="@string/bold"
+                    android:text="Contact Details"
                     android:textColor="@color/textColor"
-                    android:fontFamily="@string/bold"/>
+                    android:textSize="@dimen/title_size" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_marginHorizontal="@dimen/text_margin"
                     android:layout_marginTop="@dimen/text_margin"
-                    android:text="Government Polytechnic Gondia"
-                    android:layout_gravity="center"
+                    android:fontFamily="@string/bold"
+                    android:text="GH Raisoni Collage of Engineering, Nagpur"
                     android:textColor="@color/textColor"
-                    android:textSize="@dimen/text_size"
-                    android:fontFamily="@string/bold"/>
+                    android:textSize="17dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/text_margin"
                     android:layout_marginTop="10dp"
-                    android:text="Address:- Government Polytechnic,Gondia Fulchur Peth, Goregaon Road, Gondia"
-                    android:textColor="@color/textColor"
-                    android:justificationMode="inter_word"
-                    android:textSize="@dimen/text_size"
-                    android:fontFamily="@string/light"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="@dimen/text_margin"
-                    android:layout_marginTop="4dp"
-                    android:text="Phone:- +91-07182235140"
-                    android:textColor="@color/textColor"
-                    android:textSize="@dimen/text_size"
                     android:fontFamily="@string/light"
-                    />
+                    android:justificationMode="inter_word"
+                    android:text="Address:- GH Raisoni College of Engineering, CRPF Gate, No.3, Hingna Road, Digdoh Hills, Nagpur, Maharashtra 440016"
+                    android:textColor="@color/textColor"
+                    android:textSize="17dp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/text_margin"
                     android:layout_marginTop="4dp"
-                    android:text="Principal office:- +91-07182235140"
+                    android:fontFamily="@string/light"
+                    android:text="Phone:- (+91) 9689903286 / 9921008612"
                     android:textColor="@color/textColor"
-                    android:textSize="@dimen/text_size"
-                    android:fontFamily="@string/light"/>
+                    android:textSize="17dp"
+                    android:autoLink="phone"
+                    android:clickable="true"
+                    android:focusable="true"/>
+
+                <!--                <TextView-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginHorizontal="@dimen/text_margin"-->
+                <!--                    android:layout_marginTop="4dp"-->
+                <!--                    android:text="Principal office:- +91-07182235140"-->
+                <!--                    android:textColor="@color/textColor"-->
+                <!--                    android:textSize="@dimen/text_size"-->
+                <!--                    android:fontFamily="@string/light"/>-->
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -262,16 +333,20 @@
                     android:layout_marginHorizontal="@dimen/text_margin"
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="15dp"
-                    android:text="Email:- gp.gondia@gmail.com"
+                    android:fontFamily="@string/light"
+                    android:text="Email:- info.ghrce@raisoni.net"
                     android:textColor="@color/textColor"
-                    android:textSize="@dimen/text_size"
-                    android:fontFamily="@string/light"/>
+                    android:textSize="17dp"
+                    android:autoLink="email"
+                    android:clickable="true"
+                    android:focusable="true"/>
 
                 <ImageView
                     android:id="@+id/map"
                     android:layout_width="wrap_content"
                     android:layout_height="230dp"
-                    android:src="@drawable/mapimage"/>
+
+                    android:src="@drawable/mapimage" />
 
 
             </LinearLayout>

@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import bhushan.org.GHRCEUSER.R;
@@ -70,6 +71,11 @@ public class EbookAdapter extends RecyclerView.Adapter<EbookAdapter.EbookViewHol
     @Override
     public int getItemCount() {
         return list.size();
+    }
+
+    public void Filteredlist(ArrayList<EbookData> filterlist) {
+        list = filterlist;
+        notifyDataSetChanged();
     }
 
     public class EbookViewHolder extends RecyclerView.ViewHolder {
