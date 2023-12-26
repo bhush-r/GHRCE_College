@@ -51,8 +51,6 @@ public class GalleryFragment extends Fragment {
         getAnnualImage();
         getWorkshopsImage();
         getPlacementsImage();
-
-
         return view;
     }
     private void getConvocationImage() {

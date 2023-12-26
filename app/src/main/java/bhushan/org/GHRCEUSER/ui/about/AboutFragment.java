@@ -43,7 +43,7 @@ public class AboutFragment extends Fragment {
         ImageView imageView = view.findViewById(R.id.college_image);
 
         Glide.with(getContext())
-                .load("https://firebasestorage.googleapis.com/v0/b/my-gpg-app.appspot.com/o/SliderImages%2Fgpgphoto2.jpg?alt=media&token=6d5adc67-a19c-4784-b90f-ea0db30ba1d0")
+                .load("https://firebasestorage.googleapis.com/v0/b/my-ghrce-app.appspot.com/o/Headline%2FaboutimageView.png?alt=media&token=25b5421d-fdb7-482b-bb10-5c1bbe7ea6a1")
                 .into(imageView);
 
 

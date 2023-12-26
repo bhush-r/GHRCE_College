@@ -78,4 +78,12 @@
     <color name="orange">#FFA45A</color>
     <color name="pink">#AE445C</color>
     <color name="gray">#888888</color>
+
+
+<!--    <color name="white">#ffffff</color>-->
+    <color name="graay">#E9EAEE</color>
+    <color name="yellow">#F8BA0F</color>
+    <color name="goodgrey">#535353</color>
+    <color name="blue">#293859</color>
+    <color name="lightgrey">#EEEEEE</color>
 </resources>

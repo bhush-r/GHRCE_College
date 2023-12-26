@@ -9,13 +9,17 @@
         android:title="ENotes"
         android:icon="@drawable/ic_ebook"/>
 
-    <item android:id="@+id/navigation_theme"
-        android:title="Themes"
-        android:icon="@drawable/ic_theme"/>
-
     <item android:id="@+id/navigation_website"
         android:title="Website"
         android:icon="@drawable/ic_website"/>
+
+    <item android:id="@+id/navigation_notes"
+        android:title="Vedio Lecture"
+        android:icon="@drawable/ic_video"/>
+
+    <item android:id="@+id/navigation_theme"
+        android:title="Themes"
+        android:icon="@drawable/ic_theme"/>
 
     <item android:id="@+id/navigation_share"
         android:title="Share"
@@ -29,8 +33,6 @@
         android:title="Developer"
         android:icon="@drawable/ic_developer"/>
 
-    <item android:id="@+id/navigation_notes"
-        android:title="Vedio Lecture"
-        android:icon="@drawable/ic_video"/>
+
 
 </menu>

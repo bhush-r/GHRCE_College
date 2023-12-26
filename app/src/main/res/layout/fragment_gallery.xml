@@ -15,72 +15,70 @@
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_marginVertical="5dp"
             android:layout_height="280dp"
-            app:cardCornerRadius="13dp">
+            android:layout_marginVertical="8dp"
+            app:cardCornerRadius="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Convocation"
                     android:textAllCaps="true"
-                    android:layout_marginTop="@dimen/text_margin"
-                    android:textSize="@dimen/title_size"
+                    android:layout_marginTop="5dp"
+                    android:textSize="20sp"
                     android:layout_gravity="center_horizontal"
                     android:textColor="@color/purple_700"
-                    android:fontFamily="@string/bold"/>
+                    android:fontFamily="@string/bold" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginVertical="4dp"
-                    android:background="@color/grey1"/>
+                    android:background="@color/grey1" />
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/convocationRecycler"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/convocationRecycler"/>
-
-
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
-
-
 
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_marginVertical="5dp"
+            android:layout_marginVertical="8dp"
             android:layout_height="280dp"
-            app:cardCornerRadius="13dp">
+            app:cardCornerRadius="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Annual"
-                    android:layout_marginTop="@dimen/text_margin"
-                    android:textSize="@dimen/title_size"
+                    android:textAllCaps="true"
+                    android:layout_marginTop="5dp"
+                    android:textSize="20sp"
                     android:layout_gravity="center_horizontal"
                     android:textColor="@color/purple_700"
-                    android:textAllCaps="true"
-                    android:fontFamily="@string/bold"/>
+                    android:fontFamily="@string/bold" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginVertical="4dp"
-                    android:background="@color/grey"/>
+                    android:background="@color/grey1" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
@@ -95,33 +93,35 @@
 
         </com.google.android.material.card.MaterialCardView>
 
+
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="280dp"
-            android:layout_marginVertical="5dp"
-            app:cardCornerRadius="13dp">
+            android:layout_marginVertical="8dp"
+            app:cardCornerRadius="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="@dimen/text_margin"
-                    android:fontFamily="@string/bold"
                     android:text="Other Event"
                     android:textAllCaps="true"
+                    android:layout_marginTop="5dp"
+                    android:textSize="20sp"
+                    android:layout_gravity="center_horizontal"
                     android:textColor="@color/purple_700"
-                    android:textSize="@dimen/title_size" />
+                    android:fontFamily="@string/bold" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginVertical="4dp"
-                    android:background="@color/grey" />
+                    android:background="@color/grey1" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/otherRecycler"
@@ -134,33 +134,35 @@
 
         </com.google.android.material.card.MaterialCardView>
 
+
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_marginVertical="5dp"
             android:layout_height="280dp"
-            app:cardCornerRadius="13dp">
+            android:layout_marginVertical="8dp"
+            app:cardCornerRadius="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Workshops"
                     android:textAllCaps="true"
-                    android:layout_marginTop="@dimen/text_margin"
-                    android:textSize="@dimen/title_size"
+                    android:layout_marginTop="5dp"
+                    android:textSize="20sp"
                     android:layout_gravity="center_horizontal"
                     android:textColor="@color/purple_700"
-                    android:fontFamily="@string/bold"/>
+                    android:fontFamily="@string/bold" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginVertical="4dp"
-                    android:background="@color/grey1"/>
+                    android:background="@color/grey1" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
@@ -175,33 +177,35 @@
 
         </com.google.android.material.card.MaterialCardView>
 
+
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_marginVertical="5dp"
             android:layout_height="280dp"
-            app:cardCornerRadius="13dp">
+            android:layout_marginVertical="8dp"
+            app:cardCornerRadius="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Fests"
                     android:textAllCaps="true"
-                    android:layout_marginTop="@dimen/text_margin"
-                    android:textSize="@dimen/title_size"
+                    android:layout_marginTop="5dp"
+                    android:textSize="20sp"
                     android:layout_gravity="center_horizontal"
                     android:textColor="@color/purple_700"
-                    android:fontFamily="@string/bold"/>
+                    android:fontFamily="@string/bold" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginVertical="4dp"
-                    android:background="@color/grey1"/>
+                    android:background="@color/grey1" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
@@ -213,34 +217,34 @@
         </com.google.android.material.card.MaterialCardView>
 
 
-
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_marginVertical="5dp"
             android:layout_height="280dp"
-            app:cardCornerRadius="13dp">
+            android:layout_marginVertical="8dp"
+            app:cardCornerRadius="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Campus"
                     android:textAllCaps="true"
-                    android:layout_marginTop="@dimen/text_margin"
-                    android:textSize="@dimen/title_size"
+                    android:layout_marginTop="5dp"
+                    android:textSize="20sp"
                     android:layout_gravity="center_horizontal"
                     android:textColor="@color/purple_700"
-                    android:fontFamily="@string/bold"/>
+                    android:fontFamily="@string/bold" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginVertical="4dp"
-                    android:background="@color/grey1"/>
+                    android:background="@color/grey1" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
@@ -258,31 +262,75 @@
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_marginVertical="5dp"
             android:layout_height="280dp"
-            app:cardCornerRadius="13dp">
+            android:layout_marginVertical="8dp"
+            app:cardCornerRadius="16dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:padding="16dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="independence Day"
+                    android:text="Placements"
                     android:textAllCaps="true"
-                    android:layout_marginTop="@dimen/text_margin"
-                    android:textSize="@dimen/title_size"
+                    android:layout_marginTop="8dp"
+                    android:textSize="20sp"
                     android:layout_gravity="center_horizontal"
                     android:textColor="@color/purple_700"
-                    android:fontFamily="@string/bold"/>
+                    android:fontFamily="@string/bold" />
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginVertical="4dp"
-                    android:background="@color/grey1"/>
+                    android:background="@color/grey1" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/placementsRecycler"/>
+
+
+
+            </LinearLayout>
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:layout_marginVertical="8dp"
+            app:cardCornerRadius="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Independence Day"
+                    android:textAllCaps="true"
+                    android:layout_marginTop="8dp"
+                    android:textSize="20sp"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/purple_700"
+                    android:fontFamily="@string/bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="4dp"
+                    android:background="@color/grey1" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
@@ -297,47 +345,7 @@
 
         </com.google.android.material.card.MaterialCardView>
 
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_marginVertical="8dp"
-            android:layout_height="280dp"
-            app:cardCornerRadius="13dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Placements"
-                    android:textAllCaps="true"
-                    android:layout_marginTop="@dimen/text_margin"
-                    android:textSize="@dimen/title_size"
-                    android:layout_gravity="center_horizontal"
-                    android:textColor="@color/purple_700"
-                    android:fontFamily="@string/bold"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginVertical="4dp"
-                    android:background="@color/grey1"/>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="9dp"
-                    android:id="@+id/placementsRecycler"/>
-
-
-
-            </LinearLayout>
-
-
-
-        </com.google.android.material.card.MaterialCardView>
 
 
     </LinearLayout>

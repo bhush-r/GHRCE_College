@@ -5,7 +5,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/gpgphoto2"
+        android:src="@drawable/ghphoto"
         android:scaleType="fitXY"/>
 
 </LinearLayout>

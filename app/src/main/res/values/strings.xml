@@ -9,4 +9,16 @@
     <string name="start">Start</string>
     <string name="close">Close</string>
     <string name="about_collage">Established in 1996, G H Raisoni College of Engineering [GHRCE] is a premier Autonomous institution in the central India imparting a holistic technical education to the students residing not only in India but also international students. The institution has always been ranked amongst a well performing institution by National Institutional Ranking Framework (NIRF) 2017, MHRD, Government of India. Currently GHRCE Positioned in the Band of 51-100 in Innovation Category by NIRF Ranking 2023. The institution has also been ranked prominently by India Today MDRA Survey and Atal Ranking of Institutions on Innovation Achievements [ARIIA].</string>
+
+
+    <string name="job_success">Job Success</string>
+    <string name="ui_ux_designer">UI/UX Designer</string>
+    <string name="my_desc">I am a student currently pursuing Bachelor of Technology in Computer Science Engineering from G.H Raisoni College of Engineering, Nagpur (Affilated to RTMNU). I\'m a Tech enthusiast with an aspiration to build things. I currently work with native Android App Development with Java and Kotlin. I also have some experience with C++, HTML/CSS and Python. I love developing products and research UX Development. Apart from programing I have good experience in working with Arduino and other IoT devices.</string>
+    <string name="about_me">About Me</string>
+    <string name="contact">Contact</string>
+    <string name="skills">Skills</string>
+    <string name="ratings">Star Ratings</string>
+    <string name="samplereview2">College Application is a game-changer for G H Raisoni students, offering a sleek Material UI for easy navigation. With note-taking, past papers, and the latest news, it\'s like having a personalized university website in my pocket—essential for staying connected to campus life!</string>
+    <string name="samplereview1">College Application is my go-to for all things G H Raisoni. The app\'s user-friendly interface and access to university info make it a handy assistant. Seamless communication with authorities and quick access to results add significant value for students and parents alike</string>
+
 </resources>

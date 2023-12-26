@@ -16,8 +16,8 @@
             android:id="@+id/college_image"
             android:layout_width="match_parent"
             android:layout_height="220dp"
-            android:layout_marginHorizontal="3dp"
-            android:layout_marginTop="3dp"
+            android:layout_marginHorizontal="0dp"
+            android:layout_marginTop="0dp"
             android:fadingEdge="horizontal"
             android:scaleType="fitXY" />
 
@@ -253,6 +253,7 @@
                 android:clipToPadding="false"
                 android:foregroundGravity="center"
                 android:overScrollMode="never"
+                android:background="@drawable/circularbordersolid"
                 />
 
         </com.google.android.material.card.MaterialCardView>
