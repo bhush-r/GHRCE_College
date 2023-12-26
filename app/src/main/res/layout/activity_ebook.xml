@@ -64,9 +64,7 @@
             <include layout="@layout/shimmer_for_ebook"/>
 
         </LinearLayout>
-
-
-
+        
     </com.facebook.shimmer.ShimmerFrameLayout>
 
 </RelativeLayout>
