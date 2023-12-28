@@ -2,6 +2,8 @@ package bhushan.org.GHRCEUSER;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
@@ -15,9 +17,11 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Objects;
 
+import bhushan.org.GHRCEUSER.authentication.LoginActivity;
 import bhushan.org.GHRCEUSER.ebook.EbookActivity;
 import bhushan.org.GHRCEUSER.paper.PaperActivity;
 
@@ -29,10 +33,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private ActionBarDrawerToggle toggle;
     private NavigationView navigationView;
 
+    private final String CHECKEDITEM = "checked_item";
+
+    private FirebaseAuth auth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        auth = FirebaseAuth.getInstance();
 
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         navController = Navigation.findNavController(this, R.id.frame_layout);
@@ -54,11 +64,35 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @Override
+    public boolean onCreateOptionsMenu (Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.option_menu,menu);
+        return true;
+    }
+
+    @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (toggle.onOptionsItemSelected(item)){
             return true;
         }
-        return super.onOptionsItemSelected(item);
+        if (item.getItemId() == R.id.logout){
+            auth.signOut();
+            openLogin();
+        }
+        return true;
+    }
+
+    private void openLogin() {
+        startActivity(new Intent(MainActivity.this, LoginActivity.class));
+        finish();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (auth.getCurrentUser() == null){
+            openLogin();
+        }
     }
 
     @Override
