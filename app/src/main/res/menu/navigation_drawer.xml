@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/navigation_video"
-        android:title="Previous Paper"
-        android:icon="@drawable/ic_paper"/>
+    <item android:id="@+id/navigation_paper"
+        android:title="Que Bank"
+        android:icon="@drawable/ic_search"/>
 
     <item android:id="@+id/navigation_ebook"
         android:title="ENotes"
@@ -13,9 +13,13 @@
         android:title="Website"
         android:icon="@drawable/ic_website"/>
 
-    <item android:id="@+id/navigation_notes"
-        android:title="Vedio Lecture"
-        android:icon="@drawable/ic_video"/>
+    <item android:id="@+id/navigation_developer"
+        android:title="Developer"
+        android:icon="@drawable/ic_developer"/>
+
+    <item android:id="@+id/navigation_results"
+        android:title="Results"
+        android:icon="@drawable/ic_result"/>
 
     <item android:id="@+id/navigation_theme"
         android:title="Themes"
@@ -29,9 +33,7 @@
         android:title="Rate Us"
         android:icon="@drawable/ic_rating"/>
 
-    <item android:id="@+id/navigation_developer"
-        android:title="Developer"
-        android:icon="@drawable/ic_developer"/>
+
 
 
 

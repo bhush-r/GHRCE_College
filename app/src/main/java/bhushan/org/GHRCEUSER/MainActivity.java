@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (itemId == R.id.navigation_developer) {
             startActivity(new Intent(this, Developer.class));
 //            Toast.makeText(this, "Developer", Toast.LENGTH_SHORT).show();
-        } else if (itemId == R.id.navigation_video) {
+        } else if (itemId == R.id.navigation_paper) {
 //            Toast.makeText(this, "Previous Paper", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, PaperActivity.class));
         } else if (itemId == R.id.navigation_rate) {
@@ -117,6 +117,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //            Toast.makeText(this, "Website", Toast.LENGTH_SHORT).show();
         } else if (itemId == R.id.navigation_share) {
             Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
+        }else if (itemId == R.id.navigation_results) {
+//            Toast.makeText(this, "Result", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, Results.class));
         }
 
         return true;

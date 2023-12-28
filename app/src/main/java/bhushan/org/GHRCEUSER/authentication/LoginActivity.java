@@ -6,9 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText logEmail, logPassword;
     private TextView openReg;
+    private ProgressBar progressBar;
     private Button loginBtn;
 
     private String email, password;
@@ -44,6 +47,7 @@ public class LoginActivity extends AppCompatActivity {
         logEmail = findViewById(R.id.logEmail);
         logPassword = findViewById(R.id.logPass);
         loginBtn = findViewById(R.id.loginBtn);
+        progressBar = findViewById(R.id.progressBar); // Reference to the ProgressBar
 
 
         openReg.setOnClickListener((view) -> {openRegister();});
@@ -64,7 +68,16 @@ public class LoginActivity extends AppCompatActivity {
         if (email.isEmpty() || password.isEmpty()){
             Toast.makeText(this, "Please provide all fields", Toast.LENGTH_SHORT).show();
         } else {
-            loginUser();
+            // Show the progress bar
+            progressBar.setVisibility(View.VISIBLE);
+
+            // Simulate a delay using a Handler (replace this with your actual login logic)
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    loginUser();
+                }
+            }, 1000); // 2000 milliseconds (2 seconds) delay for illustration, replace with your actual logic
         }
     }
 
@@ -73,6 +86,8 @@ public class LoginActivity extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        // Hide the progress bar when the task is complete
+                        progressBar.setVisibility(View.GONE);
                         if (task.isSuccessful()){
                             openMain();
                         }else {
@@ -82,6 +97,10 @@ public class LoginActivity extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
+                        // Hide the progress bar on failure
+                        progressBar.setVisibility(View.GONE);
+
+
                         Toast.makeText(LoginActivity.this, "Error : "+e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });

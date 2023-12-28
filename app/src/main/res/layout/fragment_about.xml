@@ -33,7 +33,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="To create technically competent and Socially responsible technicians for Industries and society."
+            android:text="To achieve excellent standards of quality education by keeping pace with rapidly changing technologies and to create technical manpower of global standards with capabilities of accepting new challenges."
             android:layout_marginHorizontal="@dimen/text_margin"
             android:textSize="@dimen/text_size"
             android:layout_gravity="center_horizontal"
@@ -59,9 +59,9 @@
             android:layout_marginHorizontal="@dimen/text_margin"
             android:fontFamily="@string/light"
             android:justificationMode="inter_word"
-            android:text="● To impart knowledge to cater the need of industries and society.
-            \n● To develop technical and environment friendly competencies to solve real life problem.
-\n● To inculcate the spirit of team work , ethical values and leadership qualities.
+            android:text="● Our efforts are dedicated to impart quality and value based education to raise satisfaction level of all stakeholders.
+            \n● Our Strength is directed to create competent professionals.
+\n● Our endeavor is to provide all possible support to promote research and development activities.
 \n● To escalate skills of faculties and staff through training."
             android:textColor="@color/textColor"
             android:textSize="@dimen/text_size" />
@@ -98,7 +98,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/text_margin"
-                    android:text="NAAC - A Grade to Panjab University." />
+                    android:text="1st Rank in India at ARIIA-2021 among Private" />
 
             </LinearLayout>
 
@@ -116,7 +116,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/text_margin"
-                    android:text="Admissions based purely on National rankings - JEE." />
+                    android:text="Self-Finance College / Institute." />
 
             </LinearLayout>
 
@@ -243,18 +243,19 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="15dp"
-            app:cardElevation="8dp">
+            app:cardCornerRadius="10dp"
+            app:cardElevation="5dp">
 
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/viewPager"
                 android:layout_width="match_parent"
                 android:layout_height="251dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/circularbordersolid"
                 android:clipToPadding="false"
                 android:foregroundGravity="center"
-                android:overScrollMode="never"
-                android:background="@drawable/circularbordersolid"
-                />
+                android:overScrollMode="always" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -283,7 +284,20 @@
                 android:layout_marginHorizontal="@dimen/text_margin"
                 android:layout_marginTop="@dimen/text_margin"
                 android:fontFamily="@string/bold"
-                android:text="Government Polytechnic Gondia"
+                android:text="G H Raisoni College of Engineering"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/text_size" />
+
+            <TextView
+                android:layout_width="365dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/text_margin"
+                android:layout_marginTop="10dp"
+                android:autoLink="map"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="@string/light"
+                android:text="Address: G H Raisoni College of Engineering, CRPF Gate, No.3, Hingna Road, Digdoh Hills, Nagpur, Maharashtra 440016"
                 android:textColor="@color/textColor"
                 android:textSize="@dimen/text_size" />
 
@@ -291,35 +305,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/text_margin"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@string/light"
-                android:text="Address:- Government Polytechnic, Gondia Fulchur Peth, Goregaon Road, Gondia"
-                android:textColor="@color/textColor"
-                android:textSize="@dimen/text_size"
-                android:autoLink="map"
-                android:clickable="true"
-                android:focusable="true"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/text_margin"
                 android:layout_marginTop="4dp"
                 android:fontFamily="@string/light"
-                android:text="Phone:- +91-07182235140"
-                android:textColor="@color/textColor"
-                android:textSize="@dimen/text_size"
-                android:autoLink="phone"
-                android:clickable="true"
-                android:focusable="true"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/text_margin"
-                android:layout_marginTop="4dp"
-                android:fontFamily="@string/light"
-                android:text="Principal office:- +91-07182235140"
+                android:text="Phone: (+91) 9689903286 / 9921008612"
                 android:textColor="@color/textColor"
                 android:textSize="@dimen/text_size"
                 android:autoLink="phone"
@@ -334,7 +322,7 @@
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="15dp"
                 android:fontFamily="@string/light"
-                android:text="Email:- gp.gondia@gmail.com"
+                android:text="Email: info.ghrce@raisoni.net"
                 android:textColor="@color/textColor"
                 android:textSize="@dimen/text_size"
                 android:autoLink="email"

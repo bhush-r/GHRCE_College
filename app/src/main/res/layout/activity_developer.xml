@@ -214,8 +214,8 @@
                             android:layout_width="35dp"
                             android:layout_height="35dp"
                             android:background="@drawable/circular_grey_bordersolid"
-                            android:padding="10dp"
-                            android:src="@drawable/tickinsidecircle" />
+                            android:padding="6dp"
+                            android:src="@drawable/ic_linkedin" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -223,19 +223,19 @@
                             android:layout_marginLeft="10dp"
                             android:orientation="vertical">
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="97%"
-                                android:textSize="12sp"
-                                android:textStyle="bold" />
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="97%"-->
+<!--                                android:textSize="12sp"-->
+<!--                                android:textStyle="bold" />-->
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:text="@string/job_success"
-                                android:textSize="12sp" />
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginTop="2dp"-->
+<!--                                android:text="@string/job_success"-->
+<!--                                android:textSize="12sp" />-->
                         </LinearLayout>
                     </LinearLayout>
 
@@ -247,11 +247,11 @@
                         android:padding="8dp">
 
                         <ImageView
-                            android:layout_width="35dp"
+                            android:layout_width="40dp"
                             android:layout_height="35dp"
                             android:background="@drawable/circular_grey_bordersolid"
-                            android:padding="10dp"
-                            android:src="@drawable/star" />
+                            android:padding="6dp"
+                            android:src="@drawable/github" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -259,19 +259,19 @@
                             android:layout_marginLeft="10dp"
                             android:orientation="vertical">
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="4.8/5"
-                                android:textSize="12sp"
-                                android:textStyle="bold" />
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:text="4.8/5"-->
+<!--                                android:textSize="12sp"-->
+<!--                                android:textStyle="bold" />-->
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:text="@string/ratings"
-                                android:textSize="12sp" />
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginTop="2dp"-->
+<!--                                android:text="@string/ratings"-->
+<!--                                android:textSize="12sp" />-->
                         </LinearLayout>
                     </LinearLayout>
 
@@ -488,29 +488,29 @@
                                 android:fontFamily="@font/proximanovaregular" />
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:gravity="center_vertical"
-                            android:paddingRight="8dp">
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginTop="10dp"-->
+<!--                            android:gravity="center_vertical"-->
+<!--                            android:paddingRight="8dp">-->
 
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:background="@drawable/circular_grey_bordersolid"
-                                android:padding="10dp"
-                                android:src="@drawable/ic_linkedin" />
+<!--                            <ImageView-->
+<!--                                android:layout_width="40dp"-->
+<!--                                android:layout_height="40dp"-->
+<!--                                android:background="@drawable/circular_grey_bordersolid"-->
+<!--                                android:padding="10dp"-->
+<!--                                android:src="@drawable/ic_linkedin" />-->
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="20dp"
-                                android:text="Gondia, Maharashtra"
-                                android:textSize="15sp"
-                                android:textColor="@color/goodgrey"
-                                android:fontFamily="@font/proximanovaregular" />
-                        </LinearLayout>
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginLeft="20dp"-->
+<!--                                android:text="Gondia, Maharashtra"-->
+<!--                                android:textSize="15sp"-->
+<!--                                android:textColor="@color/goodgrey"-->
+<!--                                android:fontFamily="@font/proximanovaregular" />-->
+<!--                        </LinearLayout>-->
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -590,13 +590,13 @@
                                 android:layout_height="40dp"
                                 android:background="@drawable/circular_grey_bordersolid"
                                 android:padding="10dp"
-                                android:src="@drawable/paintbrush" />
+                                android:src="@drawable/ic_ski1" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
-                                android:text="Expert in Photoshop, Adobe XD"
+                                android:text="Java, Python, Android"
                                 android:textSize="15sp"/>
                         </LinearLayout>
 
@@ -612,37 +612,37 @@
                                 android:layout_height="40dp"
                                 android:background="@drawable/circular_grey_bordersolid"
                                 android:padding="10dp"
-                                android:src="@drawable/ic_email_24dp" />
+                                android:src="@drawable/ic_web" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
-                                android:text="sanskar@theindianappguy.com"
+                                android:text="Html, Css, React.js .JavaScript, "
                                 android:textSize="15sp" />
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:gravity="center_vertical"
-                            android:paddingRight="8dp">
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginTop="10dp"-->
+<!--                            android:gravity="center_vertical"-->
+<!--                            android:paddingRight="8dp">-->
 
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:background="@drawable/circular_grey_bordersolid"
-                                android:padding="10dp"
-                                android:src="@drawable/ic_location_24dp" />
+<!--                            <ImageView-->
+<!--                                android:layout_width="40dp"-->
+<!--                                android:layout_height="40dp"-->
+<!--                                android:background="@drawable/circular_grey_bordersolid"-->
+<!--                                android:padding="10dp"-->
+<!--                                android:src="@drawable/ic_location_24dp" />-->
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="20dp"
-                                android:text="Leeds, United Kingdom"
-                                android:textSize="15sp" />
-                        </LinearLayout>
+<!--                            <TextView-->
+<!--                                android:layout_width="wrap_content"-->
+<!--                                android:layout_height="wrap_content"-->
+<!--                                android:layout_marginLeft="20dp"-->
+<!--                                android:text="Leeds, United Kingdom"-->
+<!--                                android:textSize="15sp" />-->
+<!--                        </LinearLayout>-->
 
                     </LinearLayout>
                 </LinearLayout>
@@ -673,7 +673,7 @@
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:padding="6dp"
-                            android:src="@drawable/playstore" />
+                            android:src="@drawable/ic_android" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -740,7 +740,7 @@
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:padding="6dp"
-                            android:src="@drawable/playstore" />
+                            android:src="@drawable/ic_java" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -805,9 +805,9 @@
 
                         <ImageView
                             android:layout_width="40dp"
-                            android:layout_height="40dp"
+                            android:layout_height="match_parent"
                             android:padding="6dp"
-                            android:src="@drawable/android" />
+                            android:src="@drawable/ic_python" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -874,7 +874,7 @@
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:padding="6dp"
-                            android:src="@drawable/search" />
+                            android:src="@drawable/ic_webdev" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
