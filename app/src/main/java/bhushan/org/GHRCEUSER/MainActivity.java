@@ -18,11 +18,16 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.Objects;
 
 import bhushan.org.GHRCEUSER.authentication.LoginActivity;
 import bhushan.org.GHRCEUSER.ebook.EbookActivity;
+import bhushan.org.GHRCEUSER.intership.Feedback;
+import bhushan.org.GHRCEUSER.intership.IntershipActivity;
+import bhushan.org.GHRCEUSER.menuitems.ReportAndComplaint;
+import bhushan.org.GHRCEUSER.menuitems.privacyPolicy;
 import bhushan.org.GHRCEUSER.paper.PaperActivity;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -41,6 +46,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        FirebaseMessaging.getInstance().subscribeToTopic("notification");
 
         auth = FirebaseAuth.getInstance();
 
@@ -75,17 +82,33 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (toggle.onOptionsItemSelected(item)){
             return true;
         }
-        if (item.getItemId() == R.id.logout){
+//        if (item.getItemId() == R.id.logout){ auth.signOut(); openLogin(); } return true;
+//        You Can Add The MenuIem in this
+        int itemId = item.getItemId();
+        if (itemId == R.id.logout) {
             auth.signOut();
             openLogin();
-        }
+            return true;
+        } if (itemId == R.id.terms) {
+            startActivity(new Intent(this, Feedback.class));
+            return true;
+        } if (itemId == R.id.privacy) {
+        startActivity(new Intent(this, privacyPolicy.class));
         return true;
+
+        }else if (itemId == R.id.complaint) {
+            startActivity(new Intent(this, ReportAndComplaint.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
+
 
     private void openLogin() {
         startActivity(new Intent(MainActivity.this, LoginActivity.class));
         finish();
     }
+
 
     @Override
     protected void onStart() {
@@ -111,12 +134,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //            Toast.makeText(this, "Ebooks", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, EbookActivity.class));
         } else if (itemId == R.id.navigation_theme) {
-            Toast.makeText(this, "Theme", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, IntershipActivity.class));
+//            Toast.makeText(this, "Theme", Toast.LENGTH_SHORT).show();
         } else if (itemId == R.id.navigation_website) {
             startActivity(new Intent(this, Website.class));
 //            Toast.makeText(this, "Website", Toast.LENGTH_SHORT).show();
         } else if (itemId == R.id.navigation_share) {
-            Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, Share.class));
+//            Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
+
         }else if (itemId == R.id.navigation_results) {
 //            Toast.makeText(this, "Result", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, Results.class));

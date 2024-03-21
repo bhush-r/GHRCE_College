@@ -3,10 +3,10 @@
 
     <item android:id="@+id/navigation_paper"
         android:title="Que Bank"
-        android:icon="@drawable/ic_search"/>
+        android:icon="@drawable/ic_question"/>
 
     <item android:id="@+id/navigation_ebook"
-        android:title="ENotes"
+        android:title="E-Notes"
         android:icon="@drawable/ic_ebook"/>
 
     <item android:id="@+id/navigation_website"
@@ -22,7 +22,7 @@
         android:icon="@drawable/ic_result"/>
 
     <item android:id="@+id/navigation_theme"
-        android:title="Themes"
+        android:title="Internship"
         android:icon="@drawable/ic_theme"/>
 
     <item android:id="@+id/navigation_share"

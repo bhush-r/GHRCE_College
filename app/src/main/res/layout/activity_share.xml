@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Website">
+
+    <ImageView
+        android:id="@+id/imageViewQRCode"
+        android:layout_width="wrap_content"
+        android:layout_height="301dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="32dp"
+        />
+
+    <ImageView
+        android:id="@+id/imageViewShare"
+        android:layout_width="135dp"
+        android:layout_height="57dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="138dp"
+        android:layout_marginTop="362dp"
+        android:layout_marginEnd="138dp"
+        android:layout_marginBottom="256dp"
+        android:onClick="shareOnClick"
+        android:src="@drawable/ic_share" />
+
+    <TextView
+        android:id="@+id/textViewThankYou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="88dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="161dp"
+        android:text="Thank You For Sharing This App"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:visibility="visible" />
+
+</RelativeLayout>

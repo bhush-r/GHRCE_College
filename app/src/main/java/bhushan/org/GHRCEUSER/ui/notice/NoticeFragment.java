@@ -19,6 +19,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
 
@@ -53,6 +54,7 @@ public class NoticeFragment extends Fragment {
         // Fix 1: Correct the following lines by finding the view by ID from the inflated view.
         shimmerFrameLayout = view.findViewById(R.id.shimmer_view_container1);
         shimmerLayout = view.findViewById(R.id.shimmer_layout1);
+        FirebaseMessaging.getInstance().subscribeToTopic("Notice");
 
         getNotice();
 

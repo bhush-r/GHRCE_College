@@ -15,6 +15,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,6 +31,7 @@ public class GalleryFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_gallery, container, false);
 
 //sportsRecycler = view.findViewById(R.id.sportsRecycler);
+        FirebaseMessaging.getInstance().subscribeToTopic("Gallery");
 
         convocationRecycler = view.findViewById(R.id.convocationRecycler);
         annualRecycler = view.findViewById(R.id.annualRecycler);

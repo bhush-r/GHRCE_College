@@ -247,6 +247,7 @@
                         android:padding="8dp">
 
                         <ImageView
+                            android:id="@+id/githubUrl"
                             android:layout_width="40dp"
                             android:layout_height="35dp"
                             android:background="@drawable/circular_grey_bordersolid"

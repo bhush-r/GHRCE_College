@@ -26,11 +26,11 @@ import bhushan.org.GHRCEUSER.R;
 
 public class FacultyFragment extends Fragment {
 
-    private RecyclerView csDepartment, mechanicalDepartment, informationDepartment, civilDepartment,electricalDepartment,electronicDepartment;
-    private LinearLayout csNoData,mechNoData,informationNoData,civilNoData,electricalNoData,electronicNoData;
-    private List<TeacherData> list1, list2, list3, list4, list5, list6;
+    private RecyclerView csDepartment, mechanicalDepartment, informationDepartment, civilDepartment,electricalDepartment,electronicDepartment,electDepartment,cyberDepartment,csaiDepartment,aimlDepartment,iotDepartment,dsDepartment,aiDepartment;
+    private LinearLayout csNoData,mechNoData,informationNoData,civilNoData,electricalNoData,electronicNoData,electNoData,cyberNoData,csaiNoData,aimlNoData,iotNoData,dsNoData,aiNoData;
+    private List<TeacherData> list1, list2, list3, list4, list5, list6,list7,list8,list9,list10,list11,list12,list13;
     private TeacherAdapter adapter;
-    private ProgressBar progressBar1,progressBar2,progressBar3,progressBar4,progressBar5,progressBar6;
+    private ProgressBar progressBar1,progressBar2,progressBar3,progressBar4,progressBar5,progressBar6,progressBar7,progressBar8,progressBar9,progressBar10,progressBar11,progressBar12,progressBar13;
     private DatabaseReference reference,dbRef;
 
     @Override
@@ -45,6 +45,14 @@ public class FacultyFragment extends Fragment {
         civilDepartment = view.findViewById(R.id.civilDepartment);
         electricalDepartment = view.findViewById(R.id.electricalDepartment);
         electronicDepartment = view.findViewById(R.id.electronicDepartment);
+        ////////////////
+        electDepartment = view.findViewById(R.id.electDepartment);
+        cyberDepartment = view.findViewById(R.id.cyberDepartment);
+        csaiDepartment = view.findViewById(R.id.csaiDepartment);
+        aimlDepartment = view.findViewById(R.id.aimlDepartment);
+        iotDepartment = view.findViewById(R.id.iotDepartment);
+        dsDepartment = view.findViewById(R.id.dsDepartment);
+        aiDepartment = view.findViewById(R.id.aiDepartment);
 
         electronicNoData = view.findViewById(R.id.electronicNoData);
         electricalNoData = view.findViewById(R.id.electricalNoData);
@@ -52,6 +60,14 @@ public class FacultyFragment extends Fragment {
         informationNoData = view.findViewById(R.id.informationNoData);
         mechNoData = view.findViewById(R.id.mechNoData);
         csNoData = view.findViewById(R.id.csNoData);
+        ///////////////
+        electNoData = view.findViewById(R.id.electNoData);
+        cyberNoData = view.findViewById(R.id.cyberNoData);
+        csaiNoData = view.findViewById(R.id.csaiNoData);
+        aimlNoData = view.findViewById(R.id.aimlNoData);
+        iotNoData = view.findViewById(R.id.iotNoData);
+        dsNoData = view.findViewById(R.id.dsNoData);
+        aiNoData = view.findViewById(R.id.aiNoData);
 
         progressBar1 = view.findViewById(R.id.progressBar1);
         progressBar2 = view.findViewById(R.id.progressBar2);
@@ -59,6 +75,14 @@ public class FacultyFragment extends Fragment {
         progressBar4 = view.findViewById(R.id.progressBar4);
         progressBar5 = view.findViewById(R.id.progressBar5);
         progressBar6 = view.findViewById(R.id.progressBar6);
+        progressBar7 = view.findViewById(R.id.progressBar7);
+        progressBar8 = view.findViewById(R.id.progressBar8);
+        progressBar9 = view.findViewById(R.id.progressBar9);
+        progressBar10 = view.findViewById(R.id.progressBar10);
+        progressBar11 = view.findViewById(R.id.progressBar11);
+        progressBar12 = view.findViewById(R.id.progressBar12);
+        progressBar13 = view.findViewById(R.id.progressBar13);
+
 
         reference= FirebaseDatabase.getInstance().getReference().child("teacher");
 
@@ -68,6 +92,14 @@ public class FacultyFragment extends Fragment {
         civilDepartment();
         electricalDepartment();
         electronicDepartment();
+        ///////
+        electDepartment();
+        cyberDepartment();
+        csaiDepartment();
+        aimlDepartment();
+        iotDepartment();
+        dsDepartment();
+        aiDepartment();
 
         return view;
     }
@@ -283,4 +315,250 @@ public class FacultyFragment extends Fragment {
         });
 
     }
+
+    private void electDepartment() {
+        dbRef = reference.child("Electronics Engineering");
+        dbRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                list7 = new ArrayList<>();
+                if(!dataSnapshot.exists()){
+                    electNoData.setVisibility(View.VISIBLE);
+                    electDepartment.setVisibility(View.GONE);
+                }else {
+                    electNoData.setVisibility(View.GONE);
+                    electDepartment.setVisibility(View.VISIBLE);
+                    for (DataSnapshot snapshot: dataSnapshot.getChildren()){
+                        TeacherData data = snapshot.getValue(TeacherData.class);
+                        list7.add(data);
+                    }
+                    electDepartment.setHasFixedSize(true);
+                    electDepartment.setLayoutManager(new LinearLayoutManager(getContext()));
+                    adapter = new TeacherAdapter(list7,getContext());
+                    electDepartment.setAdapter(adapter);
+                    progressBar7.setVisibility(View.GONE);
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                progressBar7.setVisibility(View.GONE);
+                Toast.makeText(getContext(), databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+    private void cyberDepartment() {
+        dbRef = reference.child("Computer Science (Cyber Security)");
+        dbRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                list8 = new ArrayList<>();
+                if(!dataSnapshot.exists()){
+                    cyberNoData.setVisibility(View.VISIBLE);
+                    cyberDepartment.setVisibility(View.GONE);
+                }else {
+                    cyberNoData.setVisibility(View.GONE);
+                    electDepartment.setVisibility(View.VISIBLE);
+                    for (DataSnapshot snapshot: dataSnapshot.getChildren()){
+                        TeacherData data = snapshot.getValue(TeacherData.class);
+                        list8.add(data);
+                    }
+                    cyberDepartment.setHasFixedSize(true);
+                    cyberDepartment.setLayoutManager(new LinearLayoutManager(getContext()));
+                    adapter = new TeacherAdapter(list8,getContext());
+                    cyberDepartment.setAdapter(adapter);
+                    progressBar8.setVisibility(View.GONE);
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                progressBar8.setVisibility(View.GONE);
+                Toast.makeText(getContext(), databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+    private void csaiDepartment() {
+        dbRef = reference.child("Computer Science (AI)");
+        dbRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                list9 = new ArrayList<>();
+                if(!dataSnapshot.exists()){
+                    csaiNoData.setVisibility(View.VISIBLE);
+                    csaiDepartment.setVisibility(View.GONE);
+                }else {
+                    csaiNoData.setVisibility(View.GONE);
+                    csaiDepartment.setVisibility(View.VISIBLE);
+                    for (DataSnapshot snapshot: dataSnapshot.getChildren()){
+                        TeacherData data = snapshot.getValue(TeacherData.class);
+                        list9.add(data);
+                    }
+                    csaiDepartment.setHasFixedSize(true);
+                    csaiDepartment.setLayoutManager(new LinearLayoutManager(getContext()));
+                    adapter = new TeacherAdapter(list9,getContext());
+                    csaiDepartment.setAdapter(adapter);
+                    progressBar9.setVisibility(View.GONE);
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                progressBar9.setVisibility(View.GONE);
+                Toast.makeText(getContext(), databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+    private void aimlDepartment() {
+        dbRef = reference.child("Computer Science (AIML)");
+        dbRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                list10 = new ArrayList<>();
+                if(!dataSnapshot.exists()){
+                    aimlNoData.setVisibility(View.VISIBLE);
+                    aimlDepartment.setVisibility(View.GONE);
+                }else {
+                    aimlNoData.setVisibility(View.GONE);
+                    aimlDepartment.setVisibility(View.VISIBLE);
+                    for (DataSnapshot snapshot: dataSnapshot.getChildren()){
+                        TeacherData data = snapshot.getValue(TeacherData.class);
+                        list10.add(data);
+                    }
+                    aimlDepartment.setHasFixedSize(true);
+                    aimlDepartment.setLayoutManager(new LinearLayoutManager(getContext()));
+                    adapter = new TeacherAdapter(list10,getContext());
+                    aimlDepartment.setAdapter(adapter);
+                    progressBar10.setVisibility(View.GONE);
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                progressBar10.setVisibility(View.GONE);
+                Toast.makeText(getContext(), databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+    private void iotDepartment() {
+        dbRef = reference.child("Computer Science (IoT)");
+        dbRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                list11 = new ArrayList<>();
+                if(!dataSnapshot.exists()){
+                    iotNoData.setVisibility(View.VISIBLE);
+                    iotDepartment.setVisibility(View.GONE);
+                }else {
+                    iotNoData.setVisibility(View.GONE);
+                    iotDepartment.setVisibility(View.VISIBLE);
+                    for (DataSnapshot snapshot: dataSnapshot.getChildren()){
+                        TeacherData data = snapshot.getValue(TeacherData.class);
+                        list11.add(data);
+                    }
+                    iotDepartment.setHasFixedSize(true);
+                    iotDepartment.setLayoutManager(new LinearLayoutManager(getContext()));
+                    adapter = new TeacherAdapter(list11,getContext());
+                    iotDepartment.setAdapter(adapter);
+                    progressBar11.setVisibility(View.GONE);
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                progressBar11.setVisibility(View.GONE);
+                Toast.makeText(getContext(), databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+    private void dsDepartment() {
+        dbRef = reference.child("Data Science");
+        dbRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                list12 = new ArrayList<>();
+                if(!dataSnapshot.exists()){
+                    dsNoData.setVisibility(View.VISIBLE);
+                    dsDepartment.setVisibility(View.GONE);
+                }else {
+                    dsNoData.setVisibility(View.GONE);
+                    dsDepartment.setVisibility(View.VISIBLE);
+                    for (DataSnapshot snapshot: dataSnapshot.getChildren()){
+                        TeacherData data = snapshot.getValue(TeacherData.class);
+                        list12.add(data);
+                    }
+                    dsDepartment.setHasFixedSize(true);
+                    dsDepartment.setLayoutManager(new LinearLayoutManager(getContext()));
+                    adapter = new TeacherAdapter(list12,getContext());
+                    dsDepartment.setAdapter(adapter);
+                    progressBar12.setVisibility(View.GONE);
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                progressBar12.setVisibility(View.GONE);
+                Toast.makeText(getContext(), databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+    private void aiDepartment() {
+        dbRef = reference.child("Artificial Intelligence");
+        dbRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                list13 = new ArrayList<>();
+                if(!dataSnapshot.exists()){
+                    aiNoData.setVisibility(View.VISIBLE);
+                    aiDepartment.setVisibility(View.GONE);
+                }else {
+                    aiNoData.setVisibility(View.GONE);
+                    aiDepartment.setVisibility(View.VISIBLE);
+                    for (DataSnapshot snapshot: dataSnapshot.getChildren()){
+                        TeacherData data = snapshot.getValue(TeacherData.class);
+                        list13.add(data);
+                    }
+                    aiDepartment.setHasFixedSize(true);
+                    aiDepartment.setLayoutManager(new LinearLayoutManager(getContext()));
+                    adapter = new TeacherAdapter(list13,getContext());
+                    aiDepartment.setAdapter(adapter);
+                    progressBar13.setVisibility(View.GONE);
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                progressBar13.setVisibility(View.GONE);
+                Toast.makeText(getContext(), databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
 }

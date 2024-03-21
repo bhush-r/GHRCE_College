@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".intership.Cognifyz">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <!-- Start Quiz ImageView -->
+<!--        <ImageView-->
+<!--            android:id="@+id/imageViewStartQuiz"-->
+<!--            android:layout_width="30dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_marginTop="24dp"-->
+<!--            android:background="?selectableItemBackgroundBorderless"-->
+<!--            android:padding="4dp"-->
+<!--            app:srcCompat="@drawable/arrow"-->
+<!--            app:tint="@color/black" />-->
+
+<!--        &lt;!&ndash; Cognifyz TextView &ndash;&gt;-->
+<!--        <TextView-->
+<!--            android:id="@+id/textView"-->
+<!--            style="@style/titleTextStyle"-->
+<!--            android:layout_width="124dp"-->
+<!--            android:layout_height="37dp"-->
+<!--            android:layout_alignTop="@id/imageViewStartQuiz"-->
+<!--            android:layout_alignBottom="@id/imageViewStartQuiz"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:layout_marginTop="-7dp"-->
+<!--            android:layout_toEndOf="@id/imageViewStartQuiz"-->
+<!--            android:text="Cognifyz" />-->
+
+        <!-- Description TextView -->
+        <TextView
+            android:id="@+id/textViewDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/text_view_description"
+            android:textSize="16sp"
+            android:justificationMode="inter_word"
+            android:textAlignment="viewStart"
+            android:autoLink="email|web"
+            android:linksClickable="true"
+            android:onClick="openEmailTelegramLinkedIn" />
+
+        <!-- Email EditText -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutEmail"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewDescription"
+            android:layout_marginTop="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Full Name EditText -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutFullName"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textInputLayoutEmail"
+            android:layout_marginTop="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextFullName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Full Name" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Contact No. EditText -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutContactNo"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textInputLayoutFullName"
+            android:layout_marginTop="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextContactNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contact No." />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Name of College EditText -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutCollege"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textInputLayoutContactNo"
+            android:layout_marginTop="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextCollege"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Name of College" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Gender Spinner -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textInputLayoutCollege"
+            android:layout_marginTop="16dp">
+
+            <Spinner
+                android:id="@+id/spinnerGender"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/spinner_outline"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Academic Degree Spinner -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutAcademicDegree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textInputLayoutGender"
+            android:layout_marginTop="16dp">
+
+            <Spinner
+                android:id="@+id/spinnerAcademicDegree"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/spinner_outline"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Degree Status Spinner -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutDegreeStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textInputLayoutAcademicDegree"
+            android:layout_marginTop="16dp">
+
+            <Spinner
+                android:id="@+id/spinnerDegreeStatus"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/spinner_outline"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Preferred Internship Domain Spinner -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutInternshipDomain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textInputLayoutDegreeStatus"
+            android:layout_marginTop="16dp">
+
+            <Spinner
+                android:id="@+id/spinnerInternshipDomain"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/spinner_outline"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Learn About Cognifyz Spinner -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutLearnAbout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textInputLayoutInternshipDomain"
+            android:layout_marginTop="16dp">
+
+            <Spinner
+                android:id="@+id/spinnerLearnAbout"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/spinner_outline"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- LinkedIn and Telegram TextViews combined with Join Group CheckBox -->
+        <LinearLayout
+            android:id="@+id/linearLinkedInTelegram"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textInputLayoutLearnAbout"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:id="@+id/textViewLinkedIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="10dp"
+                android:text="Join LinkedIn"
+                android:clickable="true"
+                android:onClick="openLinkedIn" />
+
+            <TextView
+                android:id="@+id/textViewTelegram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingLeft="10dp"
+                android:text="Join Telegram Community"
+                android:clickable="true"
+                android:onClick="openTelegram" />
+
+            <CheckBox
+                android:id="@+id/checkBoxJoinGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes, I join the group" />
+
+        </LinearLayout>
+
+        <!-- Radio Buttons (India and Other) -->
+        <RadioGroup
+            android:id="@+id/radioGroupCountry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linearLinkedInTelegram"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp">
+
+            <RadioButton
+                android:id="@+id/radioButtonIndia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INDIA" />
+
+            <RadioButton
+                android:id="@+id/radioButtonOther"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Other" />
+
+        </RadioGroup>
+
+        <!-- Registration Options TextView -->
+        <TextView
+            android:id="@+id/textViewRegistrationOptions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/radioGroupCountry"
+            android:layout_marginTop="20dp"
+            android:text="@string/registration_options_description"
+            android:textSize="16sp"
+            android:justificationMode="inter_word"
+            android:textAlignment="viewStart"
+            />
+
+        <!-- Registration Options Radio Group -->
+        <RadioGroup
+            android:id="@+id/radioGroupRegistrationOptions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewRegistrationOptions"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/radioButtonRegistrationCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radio_button_registration_cost"/>
+
+            <RadioButton
+                android:id="@+id/radioButtonDocumentationCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/radio_button_documentation_cost"/>
+        </RadioGroup>
+
+        <!-- Terms and Conditions CheckBox -->
+        <CheckBox
+            android:id="@+id/checkBoxTerms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/radioGroupRegistrationOptions"
+            android:layout_marginTop="16dp"
+            android:text="I have read and accept all the terms and conditions." />
+
+        <TextView
+            android:id="@+id/textview9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/checkBoxTerms"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:layout_marginLeft="15dp"
+            android:text="UPI ID: cognifyztechnologies.39844589@hdfcbank"
+            android:layout_marginTop="20dp" />
+
+        <!-- QR Code ImageView -->
+        <ImageView
+            android:id="@+id/qrcode"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_below="@id/textview9"
+            android:src="@drawable/cogni_pay"
+            />
+
+        <!-- File Selection TextView -->
+        <TextView
+            android:id="@+id/textViewFile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/qrcode"
+            android:layout_marginTop="30dp"
+            android:text="Choose File" />
+
+        <!-- Apply Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonApply"
+            style="@style/btnStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewFile"
+            android:layout_marginTop="56dp"
+            android:text="Apply" />
+
+    </RelativeLayout>
+
+</ScrollView>

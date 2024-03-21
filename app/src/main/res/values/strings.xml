@@ -1,5 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">GHRCE College</string>
+    <string name="app_name">GHRCE Connect</string>
 
     <string name="bold" tools:ignore="ReferenceType">@font/latobold</string>
     <string name="regular" tools:ignore="ReferenceType">@font/latoregular</string>
@@ -20,5 +20,201 @@
     <string name="ratings">Star Ratings</string>
     <string name="samplereview2">College Application is a game-changer for G H Raisoni students, offering a sleek Material UI for easy navigation. With note-taking, past papers, and the latest news, it\'s like having a personalized university website in my pocket—essential for staying connected to campus life!</string>
     <string name="samplereview1">College Application is my go-to for all things G H Raisoni. The app\'s user-friendly interface and access to university info make it a handy assistant. Seamless communication with authorities and quick access to results add significant value for students and parents alike</string>
+
+
+    <string name="branch_prompt">Select Branch</string>
+    <string name="year_prompt">Select Year</string>
+    <string name="semester_prompt">Select Semester</string>
+
+
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="login_to_continue">Login to continue</string>
+
+    <string name="username_cannot_empty">Username cannot be empty</string>
+    <string name="password_cannot_empty">Password cannot be empty</string>
+    <string name="old_password_cannot_be_empty">Old Password cannot be empty</string>
+    <string name="new_password_cannot_be_empty">New Password cannot be empty</string>
+    <string name="confirm_new_password_cannot_be_empty">Confirm New Password cannot be empty</string>
+    <string name="password_must_be_same">Password must be same</string>
+    <string name="new_password_must_be_different">New Password must be different</string>
+    <string name="email_cannot_empty">Email cannot be empty</string>
+    <string name="email_not_valid">Email must be valid</string>
+    <string name="don_t_have_an_account">Don’t have an account?</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="create_account">Create Account</string>
+    <string name="register">Register</string>
+    <string name="email">Email</string>
+    <string name="start_quiz">Start Quiz</string>
+    <string name="rule">Rule</string>
+    <string name="history">History</string>
+    <string name="menu">Menu</string>
+    <string name="quiz_option">Quiz Option</string>
+    <string name="edit_password">Edit Password</string>
+    <string name="logout">Logout</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_new_password">Confirm New Password</string>
+    <string name="old_password">Old Password</string>
+    <string name="create">Create</string>
+    <string name="save_password">Save Password</string>
+    <string name="literature">Literature</string>
+    <string name="geography">Geography</string>
+    <string name="math">Math</string>
+    <string name="finish">Finish</string>
+    <string name="next">Next</string>
+    <string name="enter_answer">Enter Answer</string>
+    <string name="final_result">Final Result</string>
+    <string name="subject">Subject :</string>
+    <string name="correct">Correct :</string>
+    <string name="incorrect">Incorrect :</string>
+    <string name="earned">Earned :</string>
+    <string name="total_questions">Total Questions :</string>
+    <string name="overall_points">Overall Points :</string>
+    <string name="math_quiz">Math Quiz</string>
+    <string name="literature_quiz">Literature Quiz</string>
+    <string name="geography_quiz">Geography Quiz</string>
+    <string name="date">Date :</string>
+    <string name="start_again">Start Again!</string>
+
+    <string name="rules1_description">
+        The Quiz will contain 5 randomized questions.
+    </string>
+    <string name="rules2_description">
+        Every correct answer scores you 5 points.
+    </string>
+    <string name="rules3_description">
+        Every wrong answer deduct you 2 points.
+    </string>
+    <string name="rules4_description">
+        Your results will be saved and will be accumulated in your history.
+    </string>
+
+
+    <!-- Gender Spinner Options -->
+    <string-array name="gender_options">
+        <item>Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Prefer not to say</item>
+    </string-array>
+
+    <!-- Academic Degree Spinner Options -->
+    <string-array name="academic_degree_options">
+        <item>Currently Pursuing Academic Degree</item>
+        <item>B.Tech</item>
+        <item>M.Tech</item>
+        <item>B.E.</item>
+        <item>MBA</item>
+        <item>BCA</item>
+        <item>MCA</item>
+        <item>Other</item>
+    </string-array>
+
+    <!-- Degree Status Spinner Options -->
+    <string-array name="degree_status_options">
+        <item>Status of your Degree</item>
+        <item>Pursuing</item>
+        <item>Completed</item>
+    </string-array>
+
+    <!-- Preferred Internship Domain Spinner Options -->
+    <string-array name="internship_domain_options">
+        <item>Preferred Internship Domain</item>
+        <item>Web Development Intern</item>
+        <item>Software Development Intern</item>
+        <item>Full Stack Development Intern</item>
+        <item>App Development Intern</item>
+        <item>UI/UX Design Intern</item>
+        <item>Front-End Development</item>
+    </string-array>
+
+    <!-- Learn About Cognifyz Technologies Spinner Options -->
+    <string-array name="learn_about_options">
+        <item>Where did you learn about</item>
+        <item>Instagram</item>
+        <item>LinkedIn</item>
+        <item>Friends</item>
+        <item>Colleagues</item>
+        <item>Relatives</item>
+        <item>Campus Placement Cell/Coordinators</item>
+        <item>Other</item>
+    </string-array>
+
+
+    <!-- Description of Internship Program -->
+    <string name="internship_program_description">Q. How will I be benefiting from this Internship program?\n\n
+        A. You will get industrial experience and knowledge on respective domain along with Resume building, and LinkedIn Account building Skills.\n\n
+        Perks you will receive :\n
+        - Offer Letter from Cognifyz Technologies\n
+        - Internship Certificate\n
+        - Resume Building Support\n
+        - Letter of recommendation based on Performance\n
+        - After clearing interview stipend ranging from 5K - 10K\n\n
+        Terms and Conditions :\n\n
+        For the interview process:\n
+        Successfully completing the first month of the internship is a prerequisite for eligibility.\n
+        The interview process will be conducted after the completion of the internship.\n
+        If you pass the interview, you will be eligible for a performance-based stipend ranging from 10,000 to 15,000 rupees.\n
+        The stipend amount will reflect your performance and contribution during the internship.\n
+        To participate in the interview process, there is a registration cost of 249/-. \n\n
+        For opting out of the interview process:\n
+        If you choose not to participate in the interview process, you have the option to pay 149/-. Paying this fee will grant you an Internship Completion Letter.
+        These letters will confirm the successful completion of your internship and provide a recommendation for future opportunities.\n\n
+        Please fill all the required fields carefully, information provided will be used in offer letter and Completion Certificate.\n\n
+        Note: Please do not spam (apply multiple times for same domain), in this case your application will be considered as invalid.\n\n
+        For more detail contact on\n
+        Email ID : cognifyztechnologies@gmail.com\n
+        Telegram : https://t.me/cognifyz_technologies\n
+        LinkedIn : https://www.linkedin.com/company/cognifyz-techonologies.</string>
+
+    <!-- TextView description -->
+    <string name="text_view_description">@string/internship_program_description</string>
+
+
+    <!-- TextView description -->
+    <string name="registration_options_description">1. To apply for the interview process, there will be a registration cost of 249/-.
+(This fee covers the administrative expenses associated with the interview process and Documentation cost of  the Internship Completion Letter and Recommendation letter ensuring a fair and structured evaluation of candidates.)\n\n
+        2. Pay 149 /- Only for Documentation Costs.
+(This fee covers the administrative expenses associated with the  Documentation cost of  the Internship Completion Letter ensuring a fair and structured evaluation of candidates.)\n\n
+
+Note: You can choose any one option from above\n</string>
+
+    <!-- Radio button options -->
+    <string name="radio_button_registration_cost">Yes, I agree to pay the registration cost of INR 249/- for the interview process.</string>
+    <string name="radio_button_documentation_cost">Yes, I agree to pay the processing fee of INR 149/- Only for the Documentation Cost.</string>
+
+
+    <!-- Description of Internship Program  CodSoft-->
+    <string name="internship_program_description1">Q. What is this?\n
+A.  This is a 4 Week Virtual Internship Program opportunity from CodSoft.\n\n
+        Please fill all the required fields carefully, information provided will be used in offer letter and Completion Certificate.\n\n
+
+𝐍𝐨𝐭𝐞: 𝐏𝐥𝐞𝐚𝐬𝐞 𝐝𝐨 𝐧𝐨𝐭 𝐬𝐩𝐚𝐦 (𝐚𝐩𝐩𝐥𝐲 𝐦𝐮𝐥𝐭𝐢𝐩𝐥𝐞 𝐭𝐢𝐦𝐞𝐬 𝐟𝐨𝐫 𝐬𝐚𝐦𝐞 𝐝𝐨𝐦𝐚𝐢𝐧), 𝐢𝐧 𝐭𝐡𝐢𝐬 𝐜𝐚𝐬𝐞 𝐲𝐨𝐮𝐫 𝐚𝐩𝐩𝐥𝐢𝐜𝐚𝐭𝐢𝐨𝐧 𝐰𝐢𝐥𝐥 𝐛𝐞 𝐜𝐨𝐧𝐬𝐢𝐝𝐞𝐫 𝐚𝐬 𝐢𝐧𝐯𝐚𝐥𝐢𝐝.\n
+Perks you will receive are\n
+- Offer Letter \n
+-Internship Certificate\n
+- Letter of recommendation based on Performance\n\n
+
+Q. How can I register for this Internship Program?\n
+A. Fill up the form and  Internship Offer Letter released within 24 hours\n\n
+
+Please share your basic details and interests of specialization.\n\n
+
+This form is for  INTERNSHIP in CODSOFT for February 2024 Batch.\n\n
+
+Visit Our Website First:  https://codsoft.in/\n
+LinkedIn : https://www.linkedin.com/company/codsoft/\n
+Telegram : https://telegram.me/codsoftt\n
+Instagram : https://www.instagram.com/codsoft_official/\n
+        Email ID : cognifyztechnologies@gmail.com\n\n
+*join above all link\n\n
+
+Please fill all the required fields carefully, information provided will be used in offer letter and Completion Certificate.\n</string>
+
+    <!-- TextView description Codsoft -->
+    <string name="text_view_description1">@string/internship_program_description1</string>
+
 
 </resources>

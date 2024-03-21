@@ -15,20 +15,49 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="31">
-
-        <activity android:name=".authentication.RegisterActivity"
-            android:exported="true">
-
-        </activity>
-         <activity
-         android:name=".authentication.LoginActivity"
-         android:exported="false">
-         </activity>
+        <activity
+            android:name=".menuitems.privacyPolicy"
+            android:exported="false" />
+        <activity
+            android:name=".menuitems.ReportAndComplaint"
+            android:exported="false" />
+        <activity
+            android:name=".intership.IntershipActivity"
+            android:exported="false" />
+        <activity
+            android:name=".intership.Feedback"
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".intership.activity_feedback" -->
+        <!-- android:exported="false" /> -->
+        <activity
+            android:name=".intership.LearnFlow"
+            android:exported="false" />
+        <activity
+            android:name=".intership.Codsoft"
+            android:exported="false" />
+        <activity
+            android:name=".intership.Cognifyz"
+            android:exported="false" />
+        <activity
+            android:name=".intership.activityInternOption"
+            android:exported="false" />
+        <activity
+            android:name=".authentication.ForgetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".authentication.RegisterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".authentication.LoginActivity"
+            android:exported="false" />
         <activity
             android:name=".Developer"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Website"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Share"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ebook.PdfViewerActivity"
@@ -56,10 +85,9 @@
         <activity
             android:name=".SplashScreen"
             android:exported="true"
-            android:theme="@style/SplashScreen">
-
-        </activity>
-        <activity android:name=".MainActivity"
+            android:theme="@style/SplashScreen" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -68,6 +96,5 @@
             </intent-filter>
         </activity>
     </application>
-<!--    android:theme="@style/Theme.GHRCEUSER" />-->
 
 </manifest>

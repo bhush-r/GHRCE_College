@@ -4,7 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_marginBottom="10dp"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="10dp"
+    android:layout_margin="5dp"
+    app:cardUseCompatPadding="false"
+    android:outlineAmbientShadowColor="@color/latestBlue"
+    android:outlineSpotShadowColor="@color/latestBlue">
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
@@ -22,7 +28,7 @@
             android:layout_marginTop="3dp"
             android:orientation="vertical"
             android:elevation="10dp"
-            android:padding="8dp">
+            android:padding="15dp">
 
             <LinearLayout
                 android:layout_width="match_parent"

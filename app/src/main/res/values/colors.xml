@@ -2,8 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="colorPrimary">#3f51b5</color>
-    <color name="colorPrimaryDark">#002984</color>
+<!--    <color name="colorPrimary">#3f51b5</color>-->
+    <color name="colorPrimary">#6200EE</color>
+<!--    <color name="colorPrimaryDark">#002984</color>-->
+    <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#757de8</color>
     <color name="textColor">#3f3b3b</color>
     <color name="titleColor">#1b272c</color>
@@ -16,8 +18,6 @@
     <color name="bottom_nav_icon_color">#FF4081</color>
     <color name="serchwhite">#FFFFFF</color>
     <color name="searchblack">#000000</color>
-
-
 
 
     <color name="purple_200">#FFBB86FC</color>
@@ -87,4 +87,22 @@
     <color name="blue">#293859</color>
     <color name="lightgrey">#EEEEEE</color>
     <color name="my_primary">#5E35B1</color>
+    <color name="lightBlack">#80000000</color>
+
+    <!--    intership color -->
+
+<!--    <color name="purple_200">#FFBB86FC</color>-->
+<!--    <color name="purple_500">#FF6200EE</color>-->
+<!--    <color name="purple_700">#FF3700B3</color>-->
+<!--    <color name="teal_200">#FF6200EE</color>-->
+<!--    <color name="teal_700">#FF018786</color>-->
+<!--    <color name="black">#0D233F</color>-->
+<!--    <color name="white">#FFFFFFFF</color>-->
+<!--    <color name="gray">#A0A3B1</color>-->
+    <color name="peach">#FF6F5E</color>
+    <color name="edit_text_bg">#F2F3F7</color>
+    <color name="blue_med">#03A9F4</color>
+    <color name="light_blue_med">#89C4DA</color>
+
+
 </resources>

@@ -15,7 +15,7 @@ public class Developer extends AppCompatActivity {
     LinearLayout personalinfo, experience, review;
     TextView personalinfobtn, experiencebtn, reviewbtn;
 
-    ImageView linkedUrl;
+    ImageView linkedUrl,githubUrl;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,10 +28,14 @@ public class Developer extends AppCompatActivity {
         experiencebtn = findViewById(R.id.experiencebtn);
         reviewbtn = findViewById(R.id.reviewbtn);
         linkedUrl = findViewById(R.id.linkedUrl); ////linkedIn URL ADD
+        githubUrl = findViewById(R.id.githubUrl);
         /*making personal info visible*/
         personalinfo.setVisibility(View.VISIBLE);
         experience.setVisibility(View.GONE);
         review.setVisibility(View.GONE);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Developer");
 
 
         personalinfobtn.setOnClickListener(new View.OnClickListener() {
@@ -84,6 +88,17 @@ public class Developer extends AppCompatActivity {
                 // Open the LinkedIn profile URL in a web browser
                 String linkedinUrl = "https://www.linkedin.com/in/bhushan-lilhare-079497211/";
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(linkedinUrl));
+                startActivity(intent);
+            }
+        });
+
+        // Set OnClickListener for the githubUrl ImageView
+        githubUrl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Open the GitHub profile URL in a web browser
+                String githubUrl = "https://github.com/bhush-r";
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(githubUrl));
                 startActivity(intent);
             }
         });
