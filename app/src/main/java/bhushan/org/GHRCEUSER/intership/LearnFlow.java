@@ -8,6 +8,8 @@ import bhushan.org.GHRCEUSER.R;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.messaging.FirebaseMessaging;
+
 import java.util.Objects;
 
 public class LearnFlow extends AppCompatActivity {
@@ -16,6 +18,9 @@ public class LearnFlow extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_learn_flow);
+        //        Notification
+        FirebaseMessaging.getInstance().subscribeToTopic("LearnFlow");
+
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("LearnFlow");

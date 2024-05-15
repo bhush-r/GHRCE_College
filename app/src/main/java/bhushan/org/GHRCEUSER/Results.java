@@ -22,6 +22,8 @@ public class Results extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Results");
 
+        FirebaseMessaging.getInstance().subscribeToTopic("Result");
+
         resultWebView=(WebView) findViewById(R.id.resultsWebView);
         progressBar = findViewById(R.id.progressBar);
 

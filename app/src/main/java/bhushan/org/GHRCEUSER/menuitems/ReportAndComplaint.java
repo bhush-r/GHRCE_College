@@ -51,13 +51,16 @@ public class ReportAndComplaint extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report_and_complaint);
+
+        //        Notification
+        FirebaseMessaging.getInstance().subscribeToTopic("FeedbackAndComplaint");
+
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         subjectDropdown = findViewById(R.id.subject_dropdown);
         complaintDescription = findViewById(R.id.complaint_description);
         attachmentButton = findViewById(R.id.attachment_button);
         submitButton = findViewById(R.id.submit_button);
 
-        FirebaseMessaging.getInstance().subscribeToTopic("Complaint");
         // Populate spinner with subjects
         populateSubjectsSpinner();
 

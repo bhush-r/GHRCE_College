@@ -55,7 +55,6 @@ public class NoticeFragment extends Fragment {
         shimmerFrameLayout = view.findViewById(R.id.shimmer_view_container1);
         shimmerLayout = view.findViewById(R.id.shimmer_layout1);
         FirebaseMessaging.getInstance().subscribeToTopic("Notice");
-
         getNotice();
 
         return view;

@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.List;
 
@@ -24,9 +25,12 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.GalleryV
     private List<String> images;
 
 
+
+
     public GalleryAdapter(Context context, List<String> images) {
         this.context = context;
         this.images = images;
+        FirebaseMessaging.getInstance().subscribeToTopic("Gallery");
     }
 
     @NonNull

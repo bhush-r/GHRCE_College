@@ -11,6 +11,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import bhushan.org.GHRCEUSER.R;
 
@@ -23,6 +24,10 @@ public class privacyPolicy extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_privacy_policy);
+
+        //        Notification
+        FirebaseMessaging.getInstance().subscribeToTopic("PrivacyPolicy");
+
 
         // Initialize FirebaseFirestore instance
         db = FirebaseFirestore.getInstance();

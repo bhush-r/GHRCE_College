@@ -22,6 +22,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
@@ -40,6 +41,10 @@ public class Cognifyz extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cognifyz);
+
+        //        Notification
+        FirebaseMessaging.getInstance().subscribeToTopic("Cognifyz");
+
 
         databaseReference = FirebaseDatabase.getInstance().getReference("CognifyzTechnology");
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);

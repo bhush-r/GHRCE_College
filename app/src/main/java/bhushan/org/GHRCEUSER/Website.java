@@ -11,6 +11,7 @@ import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
 
 import com.facebook.shimmer.ShimmerFrameLayout;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class Website extends AppCompatActivity {
     private WebView mywebView;
@@ -23,6 +24,8 @@ public class Website extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Website");
 
+
+        FirebaseMessaging.getInstance().subscribeToTopic("Website");
 
         mywebView=(WebView) findViewById(R.id.webview);
         mywebView.setWebViewClient(new WebViewClient());

@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +41,9 @@ public class AboutFragment extends Fragment {
         list.add(new BranchModel(R.drawable.ic_mba,"Management Studies (MBA)","We have an excellent track record in offering high quality education, and students from our institutes get the pick of corporate and management jobs directly from campus. We give special thrust on modern state of the art Education methodologies so that we can bring the best of the knowledge close to the doorstep of our students."));
 
         adapter = new BranchAdapter(getContext(),list);
+
+        FirebaseMessaging.getInstance().subscribeToTopic("About");
+
 
         viewPager = view.findViewById(R.id.viewPager);
         viewPager.setAdapter(adapter);

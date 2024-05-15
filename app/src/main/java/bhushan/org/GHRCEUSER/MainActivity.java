@@ -26,6 +26,7 @@ import bhushan.org.GHRCEUSER.authentication.LoginActivity;
 import bhushan.org.GHRCEUSER.ebook.EbookActivity;
 import bhushan.org.GHRCEUSER.intership.Feedback;
 import bhushan.org.GHRCEUSER.intership.IntershipActivity;
+import bhushan.org.GHRCEUSER.menuitems.Profile;
 import bhushan.org.GHRCEUSER.menuitems.ReportAndComplaint;
 import bhushan.org.GHRCEUSER.menuitems.privacyPolicy;
 import bhushan.org.GHRCEUSER.paper.PaperActivity;
@@ -95,6 +96,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } if (itemId == R.id.privacy) {
         startActivity(new Intent(this, privacyPolicy.class));
         return true;
+        } if (itemId == R.id.profile) {
+            startActivity(new Intent(this, Profile.class));
+            return true;
 
         }else if (itemId == R.id.complaint) {
             startActivity(new Intent(this, ReportAndComplaint.class));

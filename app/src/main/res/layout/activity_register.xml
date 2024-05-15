@@ -34,6 +34,32 @@
             android:textColor="@color/lightBlack"
             android:textCursorDrawable="@null" />
 
+        <!-- Gender Selection -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="4dp"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+
+            <Spinner
+                android:id="@+id/regGenderSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@drawable/spinner_outline"
+                android:entries="@array/gender_options"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="8dp"
+                android:prompt="@string/gender_prompt"
+                android:spinnerMode="dropdown"
+
+                android:textColor="@color/latestBlue" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
         <!-- Branch Selection -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutBranch"
@@ -121,6 +147,35 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutPhone"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColorHint="@color/blackToWhite"
+            app:boxStrokeColor="@drawable/text_box_signup"
+            app:hintTextColor="@color/latestBlue"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+            app:layout_constraintStart_toStartOf="@+id/textInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayoutBranch">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/regPhone"
+                android:layout_width="314dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:ems="15"
+                android:hint="Mobile"
+                android:inputType="phone"
+                android:textColor="@color/lightBlack"
+                android:textCursorDrawable="@null" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+<!--        Email-->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutEmail"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"

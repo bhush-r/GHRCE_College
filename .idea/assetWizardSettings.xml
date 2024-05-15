@@ -80,7 +80,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\Bhushan\Downloads\respresso\android\res\drawable-mdpi\design_a_geometric_shape_such_as_a_hexagon_or_c.jpg" />
+                                                <entry key="imagePath" value="C:\Users\Bhushan\Downloads" />
                                                 <entry key="scalingPercent" value="67" />
                                               </map>
                                             </option>
@@ -181,6 +181,18 @@
                                           </PersistentState>
                                         </value>
                                       </entry>
+                                      <entry key="image">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="color" value="000000" />
+                                                <entry key="imagePath" value="C:\Users\Bhushan\Downloads\GHCE_icon.jpeg" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
                                       <entry key="text">
                                         <value>
                                           <PersistentState>
@@ -203,6 +215,13 @@
                                           </PersistentState>
                                         </value>
                                       </entry>
+                                    </map>
+                                  </option>
+                                  <option name="values">
+                                    <map>
+                                      <entry key="assetType" value="IMAGE" />
+                                      <entry key="imageAsset" value="C:\Users\Bhushan\Downloads\GHCE_icon.jpeg" />
+                                      <entry key="outputName" value="notifaction_icon" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -283,6 +302,11 @@
                                 </PersistentState>
                               </value>
                             </entry>
+                          </map>
+                        </option>
+                        <option name="values">
+                          <map>
+                            <entry key="outputIconType" value="NOTIFICATION" />
                           </map>
                         </option>
                       </PersistentState>

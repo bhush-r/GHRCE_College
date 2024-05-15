@@ -75,6 +75,7 @@ import androidx.fragment.app.Fragment;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
 
@@ -89,6 +90,9 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         ArrayList<SlideModel> imageList = new ArrayList<>(); // Create image list
+
+//        Notification
+        FirebaseMessaging.getInstance().subscribeToTopic("Home");
 
         // Add image slides
 //        imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/my-gpg-app.appspot.com/o/SliderImages%2FGHRCE1.jpg?alt=media&token=6367e435-559e-47ee-a6e4-7329535454c7&_gl=1*jfa0ha*_ga*MTM5NDUwNDgzMS4xNjc4MDI3ODcz*_ga_CW55HF8NVT*MTY5ODE0MDYwNC4xOS4xLjE2OTgxNDA5NzMuMjMuMC4w", ScaleTypes.CENTER_CROP));

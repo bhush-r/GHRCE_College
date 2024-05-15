@@ -18,6 +18,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +39,8 @@ public class FacultyFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_faculty, container, false);
+
+        FirebaseMessaging.getInstance().subscribeToTopic("Faculty");
 
         csDepartment = view.findViewById(R.id.csDepartment);
         mechanicalDepartment = view.findViewById(R.id.mechanicalDepartment);

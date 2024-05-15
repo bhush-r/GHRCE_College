@@ -23,6 +23,7 @@
 
 
     <string name="branch_prompt">Select Branch</string>
+    <string name="gender_prompt">Select Gender</string>
     <string name="year_prompt">Select Year</string>
     <string name="semester_prompt">Select Semester</string>
 
@@ -94,7 +95,7 @@
 
     <!-- Gender Spinner Options -->
     <string-array name="gender_options">
-        <item>Gender</item>
+        <item>Select Gender</item>
         <item>Male</item>
         <item>Female</item>
         <item>Prefer not to say</item>

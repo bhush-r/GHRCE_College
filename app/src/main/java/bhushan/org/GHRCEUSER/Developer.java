@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.firebase.messaging.FirebaseMessaging;
+
 public class Developer extends AppCompatActivity {
 
     LinearLayout personalinfo, experience, review;
@@ -36,6 +38,9 @@ public class Developer extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Developer");
+
+//        Notification
+        FirebaseMessaging.getInstance().subscribeToTopic("Developer");
 
 
         personalinfobtn.setOnClickListener(new View.OnClickListener() {

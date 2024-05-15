@@ -25,6 +25,7 @@ public class Share extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_share);
+//        Notification
         FirebaseMessaging.getInstance().subscribeToTopic("Share");
         imageViewQRCode = findViewById(R.id.imageViewQRCode);
         ImageView imageViewShare = findViewById(R.id.imageViewShare);
