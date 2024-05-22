@@ -2,6 +2,7 @@ package bhushan.org.GHRCEUSER;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -15,10 +16,13 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.firebase.messaging.FirebaseMessagingService;
 
 import java.util.Objects;
 
@@ -69,6 +73,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
+
+        /////////Extra token remove any time for only checking pupose use
+
+        FirebaseMessaging.getInstance().getToken().addOnCompleteListener(new OnCompleteListener<String>() {
+            @Override
+            public void onComplete(@NonNull Task<String> task) {
+
+                if (!task.isSuccessful()){
+                    Log.e("TokenDetails", "Token Failed to receive!");
+                    return;
+                }
+                String token = task.getResult();
+                Log.d("TOKEN", token);
+            }
+        });
     }
 
     @Override

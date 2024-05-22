@@ -3,9 +3,12 @@ package bhushan.org.GHRCEUSER.menuitems;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -19,11 +22,13 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.Map;
 
 import bhushan.org.GHRCEUSER.R;
+import bhushan.org.GHRCEUSER.authentication.LoginActivity;
 
 public class Profile extends AppCompatActivity {
 
-    private TextView pr_name, pr_email, pr_branch, pr_year, pr_sem, pr_gender,pr_phone;
+    private TextView pr_name, pr_email, pr_branch, pr_year, pr_sem, pr_gender, pr_phone;
     private DatabaseReference dbRef;
+    private Button logout_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +37,7 @@ public class Profile extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Profile");
+
         // Initialize TextViews
         pr_name = findViewById(R.id.pr_name);
         pr_email = findViewById(R.id.pr_email);
@@ -40,6 +46,16 @@ public class Profile extends AppCompatActivity {
         pr_sem = findViewById(R.id.pr_sem);
         pr_gender = findViewById(R.id.pr_gender);
         pr_phone = findViewById(R.id.pr_phone);
+
+        // Initialize Log Out button
+        logout_button = findViewById(R.id.logout_button);
+        logout_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                openLogin();
+            }
+        });
 
         // Get current user
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -82,6 +98,13 @@ public class Profile extends AppCompatActivity {
         }
     }
 
+    private void openLogin() {
+        Intent intent = new Intent(Profile.this, LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
+    }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
@@ -95,6 +118,4 @@ public class Profile extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
     }
-
-
 }

@@ -55,7 +55,7 @@
             android:maxLines="4"
             android:text="                                            "
             android:textSize="17sp"
-            android:background="#D2EAEAEA"/>
+            android:background="#EAEAEA"/>
 
         <ImageView
             android:id="@+id/deleteNoticeImage"
@@ -63,7 +63,7 @@
             android:layout_height="450dp"
             android:elevation="5dp"
             android:scaleType="fitXY"
-            android:background="#D2EAEAEA"/> <!-- add hight old Change Size of Notice borad -->
+            android:background="#EAEAEA"/> <!-- add hight old Change Size of Notice borad -->
     </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>
