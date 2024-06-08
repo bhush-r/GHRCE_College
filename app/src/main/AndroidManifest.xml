@@ -17,6 +17,9 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
+            android:name=".compile.compiler"
+            android:exported="false" />
+        <activity
             android:name=".menuitems.Profile"
             android:exported="false" />
         <activity
@@ -107,7 +110,6 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
     </application>
 
 </manifest>

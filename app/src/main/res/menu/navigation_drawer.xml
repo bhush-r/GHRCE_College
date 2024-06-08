@@ -13,6 +13,10 @@
         android:title="Website"
         android:icon="@drawable/ic_website"/>
 
+    <item android:id="@+id/navigation_compiler"
+        android:title="Compiler"
+        android:icon="@drawable/ic_it"/>
+
     <item android:id="@+id/navigation_developer"
         android:title="Developer"
         android:icon="@drawable/ic_developer"/>

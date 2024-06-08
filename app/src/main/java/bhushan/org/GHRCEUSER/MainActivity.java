@@ -27,6 +27,7 @@ import com.google.firebase.messaging.FirebaseMessagingService;
 import java.util.Objects;
 
 import bhushan.org.GHRCEUSER.authentication.LoginActivity;
+import bhushan.org.GHRCEUSER.compile.compiler;
 import bhushan.org.GHRCEUSER.ebook.EbookActivity;
 import bhushan.org.GHRCEUSER.intership.Feedback;
 import bhushan.org.GHRCEUSER.intership.IntershipActivity;
@@ -165,6 +166,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (itemId == R.id.navigation_share) {
             startActivity(new Intent(this, Share.class));
 //            Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
+        } else if (itemId == R.id.navigation_compiler) {
+            startActivity(new Intent(this, compiler.class));
 
         }else if (itemId == R.id.navigation_results) {
 //            Toast.makeText(this, "Result", Toast.LENGTH_SHORT).show();
