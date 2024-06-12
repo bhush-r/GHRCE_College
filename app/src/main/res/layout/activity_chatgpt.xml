@@ -6,18 +6,6 @@
     android:layout_height="match_parent"
     android:padding="10dp"
     tools:context=".ChatGPT.Chatgpt">
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/titleLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="14dp"
-        android:elevation="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chat_rv"
@@ -26,7 +14,7 @@
         app:layout_constraintBottom_toTopOf="@+id/bottom_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleLayout" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtWelcome"
@@ -49,7 +37,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:padding="15dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="2dp"
         app:layout_constraintStart_toStartOf="parent">
 
         <EditText
@@ -57,7 +45,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="6"
-            android:background="@drawable/round_edit_text"
+            android:background="@drawable/round_edit_text_chat"
             android:hint="Write here...."
             android:fontFamily="@font/comfortaalight"
             android:padding="15dp"
