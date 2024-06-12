@@ -5,7 +5,7 @@
     app:cardElevation="8dp"
     app:cardCornerRadius="10dp"
     android:layout_margin="5dp"
-    android:layout_height="wrap_content"
+    android:layout_height="84dp"
     app:cardUseCompatPadding="false"
     android:outlineAmbientShadowColor="@color/latestBlue"
     android:outlineSpotShadowColor="@color/latestBlue">
@@ -28,9 +28,10 @@
             android:id="@+id/paperName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="DSA Book"
-            android:textSize="@dimen/text_size"
+            android:text="DSA Booklllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll"
+            android:textSize="15dp"
             android:layout_marginLeft="@dimen/text_margin"
+            android:layout_marginRight="27dp"
             android:textColor="@color/textColor"
             android:fontFamily="@string/regular"/>
 

@@ -22,11 +22,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.messaging.FirebaseMessaging;
-import com.google.firebase.messaging.FirebaseMessagingService;
 
 import java.util.Objects;
 
+import bhushan.org.GHRCEUSER.ChatGPT.Chatgpt;
 import bhushan.org.GHRCEUSER.authentication.LoginActivity;
+import bhushan.org.GHRCEUSER.chating.chat;
 import bhushan.org.GHRCEUSER.compile.compiler;
 import bhushan.org.GHRCEUSER.ebook.EbookActivity;
 import bhushan.org.GHRCEUSER.intership.Feedback;
@@ -168,6 +169,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //            Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
         } else if (itemId == R.id.navigation_compiler) {
             startActivity(new Intent(this, compiler.class));
+        } else if (itemId == R.id.navigation_chat) {
+            startActivity(new Intent(this, chat.class));
+        } else if (itemId == R.id.navigation_chatgpt) {
+            startActivity(new Intent(this, Chatgpt.class));
 
         }else if (itemId == R.id.navigation_results) {
 //            Toast.makeText(this, "Result", Toast.LENGTH_SHORT).show();

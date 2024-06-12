@@ -218,4 +218,36 @@ Please fill all the required fields carefully, information provided will be used
     <string name="text_view_description1">@string/internship_program_description1</string>
 
 
+    <!-- Branches array -->
+    <string-array name="branches_array">
+        <item>All</item>
+        <item>Computer Science</item>
+        <item>Information Technology</item>
+        <item>Mechanical</item>
+        <item>Civil</item>
+        <item>Electrical</item>
+        <item>Electronics</item>
+        <item>Electronics and Telecommunication</item>
+        <item>Computer Science (AI)</item>
+        <item>Computer Science (AIML)</item>
+        <item>Computer Science (Cyber Security)</item>
+        <item>Computer Science (IoT)</item>
+        <item>Data Science</item>
+        <item>Artificial Intelligence</item>
+        <!-- Add more branches as needed -->
+    </string-array>
+
+    <!-- Semesters array -->
+    <string-array name="semesters_array">
+        <item>All</item>
+        <item>Semester 1</item>
+        <item>Semester 2</item>
+        <item>Semester 3</item>
+        <item>Semester 4</item>
+        <item>Semester 5</item>
+        <item>Semester 6</item>
+        <item>Semester 7</item>
+        <item>Semester 8</item>
+    </string-array>
+
 </resources>

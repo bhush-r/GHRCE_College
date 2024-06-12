@@ -2,18 +2,20 @@
 <resources>
     <string-array name="branch_options">
         <item>Select Branch</item>
-        <item>CSE</item>
-        <item>CSE DS</item>
-        <item>CSE IOT</item>
+        <item>Computer Science Eng</item>
+        <item>Computer Science DS</item>
+        <item>Computer Science IOT</item>
         <item>CSE Cyber Security</item>
-        <item>IT</item>
-        <item>AI</item>
-        <item>AIML</item>
-        <item>CE</item>
-        <item>ETC</item>
+        <item>Computer Science AI</item>
+        <item>Information Technology</item>
+        <item>Artificial Intelligence</item>
         <item>Electronics Eng</item>
         <item>Electrical Eng</item>
-        <item>ME</item>
+        <item>Mechanical Eng</item>
+        <item>AIML</item>
+        <item>Civil</item>
+        <item>ETC</item>
+
     </string-array>
 
     <string-array name="semester_options">

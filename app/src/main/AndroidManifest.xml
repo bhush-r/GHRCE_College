@@ -17,6 +17,12 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
+            android:name=".ChatGPT.Chatgpt"
+            android:exported="false" />
+        <activity
+            android:name=".chating.chat"
+            android:exported="true" />
+        <activity
             android:name=".compile.compiler"
             android:exported="false" />
         <activity

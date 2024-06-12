@@ -23,12 +23,16 @@ import java.util.Map;
 
 import bhushan.org.GHRCEUSER.R;
 import bhushan.org.GHRCEUSER.authentication.LoginActivity;
+import bhushan.org.GHRCEUSER.chating.chat;
 
 public class Profile extends AppCompatActivity {
 
     private TextView pr_name, pr_email, pr_branch, pr_year, pr_sem, pr_gender, pr_phone;
     private DatabaseReference dbRef;
     private Button logout_button;
+
+    public static String currentUserName;
+    public static String currentUserEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +87,10 @@ public class Profile extends AppCompatActivity {
                         pr_sem.setText(userData.get("semester").toString());
                         pr_gender.setText(userData.get("gender").toString());
                         pr_phone.setText(userData.get("phone").toString());
+
+                        // Store the current user's name and email
+                        currentUserName = userData.get("name").toString();
+                        currentUserEmail = userData.get("email").toString();
                     } else {
                         // Log statement to indicate that dataSnapshot doesn't exist
                         Log.d("ProfileActivity", "Data doesn't exist");
@@ -117,5 +125,11 @@ public class Profile extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+    }
+
+    public void openChatActivity(View view) {
+        Intent intent = new Intent(this, chat.class);
+        intent.putExtra("username", currentUserName);
+        startActivity(intent);
     }
 }
