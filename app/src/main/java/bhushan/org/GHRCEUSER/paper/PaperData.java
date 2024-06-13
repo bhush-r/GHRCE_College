@@ -15,6 +15,7 @@ public class PaperData {
         this.semester = semester;
     }
 
+    // Getters and setters
     public String getPaperTitle() {
         return paperTitle;
     }
