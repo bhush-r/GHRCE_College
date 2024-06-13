@@ -23,11 +23,11 @@
 
     <item android:id="@+id/navigation_chat"
         android:title="Discussion Chat"
-        android:icon="@android:drawable/stat_notify_chat"/>
+        android:icon="@drawable/stat_notify_chat"/>
 
     <item android:id="@+id/navigation_chatgpt"
         android:title="AI Assistanse"
-        android:icon="@android:drawable/stat_notify_chat"/>
+        android:icon="@drawable/ic_chatgpt"/>
 
     <item android:id="@+id/navigation_results"
         android:title="Results"
