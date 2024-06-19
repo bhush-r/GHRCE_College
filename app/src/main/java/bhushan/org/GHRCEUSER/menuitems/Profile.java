@@ -39,6 +39,7 @@ public class Profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Profile");
 
@@ -129,7 +130,7 @@ public class Profile extends AppCompatActivity {
 
     public void openChatActivity(View view) {
         Intent intent = new Intent(this, chat.class);
-        intent.putExtra("username", currentUserName);
+        intent.putExtra("userName", currentUserName); // Corrected the parameter name to "userName"
         startActivity(intent);
     }
 }

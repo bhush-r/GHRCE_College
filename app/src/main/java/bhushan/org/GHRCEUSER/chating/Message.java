@@ -7,7 +7,8 @@ public class Message {
     private String senderEmail; // Add sender's email
     // Add other profile data as needed
     private String messageText;
-    private String attachmentUrl;
+    private String attachmentUrl; // URL for image, video, or document
+    private String attachmentType; // Type of attachment: "image", "video", "document"
     private long timestamp;
 
     public Message() {
@@ -20,6 +21,7 @@ public class Message {
         this.senderEmail = senderEmail;
         this.messageText = messageText;
         this.attachmentUrl = attachmentUrl;
+        this.attachmentType = attachmentType;
         this.timestamp = timestamp;
     }
 

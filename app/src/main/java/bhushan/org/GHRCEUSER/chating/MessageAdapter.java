@@ -39,11 +39,13 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHo
             holder.rightChatView.setVisibility(View.VISIBLE);
             holder.rightTextView.setText(message.getMessageText());
             holder.rightTimestampTextView.setText(getFormattedTime(message.getTimestamp()));
+            holder.rightSenderNameTextView.setText(message.getSenderName());
         } else {
             holder.rightChatView.setVisibility(View.GONE);
             holder.leftChatView.setVisibility(View.VISIBLE);
             holder.leftTextView.setText(message.getMessageText());
             holder.leftTimestampTextView.setText(getFormattedTime(message.getTimestamp()));
+            holder.leftSenderNameTextView.setText(message.getSenderName());
         }
     }
 
@@ -61,6 +63,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHo
         LinearLayout leftChatView, rightChatView;
         TextView leftTextView, rightTextView;
         TextView leftTimestampTextView, rightTimestampTextView;
+        TextView leftSenderNameTextView, rightSenderNameTextView;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -70,6 +73,9 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHo
             rightTextView = itemView.findViewById(R.id.right_chat_text_view);
             leftTimestampTextView = itemView.findViewById(R.id.timestampTextView);
             rightTimestampTextView = itemView.findViewById(R.id.timestampTextView2);
+            leftSenderNameTextView = itemView.findViewById(R.id.left_sender_name_text_view); // Initialize sender name text views
+            rightSenderNameTextView = itemView.findViewById(R.id.right_sender_name_text_view);
+
         }
     }
 }
