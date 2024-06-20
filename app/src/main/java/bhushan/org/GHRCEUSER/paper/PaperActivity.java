@@ -190,6 +190,7 @@ package bhushan.org.GHRCEUSER.paper;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -238,7 +239,7 @@ public class PaperActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Previous Paper");
 
         paperRecycler = findViewById(R.id.paperRecycler);
-        reference = FirebaseDatabase.getInstance().getReference().child("paper");
+        reference = FirebaseDatabase.getInstance().getReference();
 
         shimmerFrameLayout = findViewById(R.id.shimmer_view_container);
         shimmerLayout = findViewById(R.id.shimmer_layout);
@@ -247,7 +248,7 @@ public class PaperActivity extends AppCompatActivity {
         semesterSpinner = findViewById(R.id.semesterSpinner);
 
         setupSpinners();
-        getData();
+        loadPapers();
     }
 
     private void setupSpinners() {
@@ -267,7 +268,7 @@ public class PaperActivity extends AppCompatActivity {
         branchSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                applyFilters();
+                loadPapers();
             }
 
             @Override
@@ -277,7 +278,7 @@ public class PaperActivity extends AppCompatActivity {
         semesterSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                applyFilters();
+                loadPapers();
             }
 
             @Override
@@ -285,21 +286,41 @@ public class PaperActivity extends AppCompatActivity {
         });
     }
 
-    private void getData() {
-        reference.addValueEventListener(new ValueEventListener() {
+    private void loadPapers() {
+        String selectedBranch = branchSpinner.getSelectedItem().toString();
+        String selectedSemester = semesterSpinner.getSelectedItem().toString();
+
+        Log.d("PaperActivity", "Selected Branch: " + selectedBranch);
+        Log.d("PaperActivity", "Selected Semester: " + selectedSemester);
+
+        shimmerFrameLayout.startShimmer();
+        shimmerLayout.setVisibility(View.VISIBLE);
+        search.setVisibility(View.GONE);
+
+        reference.child("papers").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 list = new ArrayList<>();
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    PaperData data = snapshot.getValue(PaperData.class);
-                    if (data != null) {
-                        list.add(data);
+                for (DataSnapshot branchSnapshot : dataSnapshot.getChildren()) {
+                    String branchName = branchSnapshot.getKey();
+                    for (DataSnapshot semesterSnapshot : branchSnapshot.getChildren()) {
+                        String semesterName = semesterSnapshot.getKey();
+                        for (DataSnapshot paperSnapshot : semesterSnapshot.getChildren()) {
+                            PaperData data = paperSnapshot.getValue(PaperData.class);
+                            if (data != null) {
+                                if ((selectedBranch.equals("All") || data.getBranch().equals(selectedBranch)) &&
+                                        (selectedSemester.equals("All") || data.getSemester().equals(selectedSemester))) {
+                                    list.add(data);
+                                }
+                            }
+                        }
                     }
                 }
 
                 if (list.isEmpty()) {
-                    // Handle case where no data is retrieved
                     Toast.makeText(PaperActivity.this, "No papers found", Toast.LENGTH_SHORT).show();
+                } else {
+                    Log.d("PaperActivity", "Papers found: " + list.size());
                 }
 
                 adapter = new PaperAdapter(PaperActivity.this, list);
@@ -313,6 +334,8 @@ public class PaperActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Toast.makeText(PaperActivity.this, "Database Error: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                shimmerFrameLayout.stopShimmer();
+                shimmerLayout.setVisibility(View.GONE);
             }
         });
 
@@ -328,30 +351,6 @@ public class PaperActivity extends AppCompatActivity {
                 filter(editable.toString());
             }
         });
-    }
-
-    private void applyFilters() {
-        if (list == null || list.isEmpty() || adapter == null) {
-            return; // Ensure that list or adapter is not null or empty before applying filters
-        }
-
-        String selectedBranch = branchSpinner.getSelectedItem().toString();
-        String selectedSemester = semesterSpinner.getSelectedItem().toString();
-
-        if (selectedBranch.equalsIgnoreCase("All") && selectedSemester.equalsIgnoreCase("All")) {
-            adapter.Filteredlist(new ArrayList<>(list)); // Show all papers
-        } else {
-            List<PaperData> filteredList = new ArrayList<>();
-            for (PaperData item : list) {
-                if (item.getBranch() != null && item.getSemester() != null) {
-                    if ((selectedBranch.equalsIgnoreCase("All") || item.getBranch().equalsIgnoreCase(selectedBranch)) &&
-                            (selectedSemester.equalsIgnoreCase("All") || item.getSemester().equalsIgnoreCase(selectedSemester))) {
-                        filteredList.add(item);
-                    }
-                }
-            }
-            adapter.Filteredlist(new ArrayList<>(filteredList));
-        }
     }
 
     private void filter(String text) {
