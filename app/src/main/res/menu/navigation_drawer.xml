@@ -29,6 +29,10 @@
         android:title="AI Assistanse"
         android:icon="@drawable/ic_chatgpt"/>
 
+    <item android:id="@+id/navigation_meditetion"
+        android:title="Relaxing Mind"
+        android:icon="@drawable/ic_meditetion"/>
+
     <item android:id="@+id/navigation_results"
         android:title="Results"
         android:icon="@drawable/ic_result"/>

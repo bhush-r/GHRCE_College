@@ -300,7 +300,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="125dp" />
+        app:layout_constraintGuide_end="72dp" />
 
 
     <!-- Register Button -->
@@ -347,8 +347,8 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif"
         android:text="Registration"
-        android:textColor="@color/colorwhite"
-        android:textSize="48sp"
+        android:textColor="@color/bottomNav"
+        android:textSize="35sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/textInputLayout"
         app:layout_constraintEnd_toEndOf="parent"

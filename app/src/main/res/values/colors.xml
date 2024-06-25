@@ -18,6 +18,7 @@
     <color name="bottom_nav_icon_color">#FF4081</color>
     <color name="serchwhite">#FFFFFF</color>
     <color name="searchblack">#000000</color>
+    <color name="transparent">#000000</color>
 
 
     <color name="purple_200">#FFBB86FC</color>
