@@ -19,7 +19,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:gravity="center"
         android:orientation="horizontal"
         tools:layout_editor_absoluteX="0dp"
@@ -51,14 +51,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:gravity="center"
         android:orientation="horizontal"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="390dp">
 
         <TextView
-            android:layout_width="80dp"
+            android:layout_width="82dp"
             android:layout_height="wrap_content"
             android:elevation="5dp"
             android:paddingTop="8dp"
@@ -83,14 +83,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:gravity="center"
         android:orientation="horizontal"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="390dp">
 
         <TextView
-            android:layout_width="80dp"
+            android:layout_width="82dp"
             android:layout_height="wrap_content"
             android:elevation="5dp"
             android:paddingTop="8dp"
@@ -115,14 +115,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:gravity="center"
         android:orientation="horizontal"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="390dp">
 
         <TextView
-            android:layout_width="80dp"
+            android:layout_width="82dp"
             android:layout_height="wrap_content"
             android:elevation="5dp"
             android:paddingTop="8dp"
@@ -147,14 +147,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:gravity="center"
         android:orientation="horizontal"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="317dp">
 
         <TextView
-            android:layout_width="80dp"
+            android:layout_width="82dp"
             android:layout_height="wrap_content"
             android:elevation="5dp"
             android:paddingTop="8dp"
@@ -179,14 +179,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:gravity="center"
         android:orientation="horizontal"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="317dp">
 
         <TextView
-            android:layout_width="80dp"
+            android:layout_width="82dp"
             android:layout_height="wrap_content"
             android:elevation="5dp"
             android:paddingTop="8dp"
@@ -211,19 +211,19 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         android:gravity="center"
         android:orientation="horizontal"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="317dp">
 
         <TextView
-            android:layout_width="80dp"
+            android:layout_width="82dp"
             android:layout_height="wrap_content"
             android:elevation="5dp"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
-            android:text="Semes:-"
+            android:text="Sem:-"
             android:textAlignment="center"
             android:textSize="18sp" />
 
@@ -251,6 +251,18 @@
         android:elevation="5dp"
         android:paddingVertical="12dp"
         android:text="Log Out"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/update_button"
+        android:layout_width="301dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/round_edit_text"
+        android:elevation="5dp"
+        android:paddingVertical="12dp"
+        android:text="Update"
         android:textColor="@android:color/white"
         android:layout_gravity="center"/>
 
