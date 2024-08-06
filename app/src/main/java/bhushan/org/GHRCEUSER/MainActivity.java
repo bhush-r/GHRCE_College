@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -110,8 +111,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //        You Can Add The MenuIem in this
         int itemId = item.getItemId();
         if (itemId == R.id.logout) {
-            auth.signOut();
-            openLogin();
+            // Show the AlertDialog for logout confirmation
+            new AlertDialog.Builder(this)
+                    .setTitle("Logout")
+                    .setMessage("Are you sure you want to logout?")
+                    .setPositiveButton("Yes", (dialog, which) -> {
+                        // User confirmed logout
+                        auth.signOut();
+                        openLogin();
+                    })
+                    .setNegativeButton("No", (dialog, which) -> {
+                        // User canceled the logout action
+                        dialog.dismiss();
+                    })
+                    .show();
             return true;
         } if (itemId == R.id.terms) {
             startActivity(new Intent(this, Feedback.class));

@@ -63,51 +63,62 @@
 package bhushan.org.GHRCEUSER.ui.home;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.constants.ScaleTypes;
 import com.denzcoskun.imageslider.models.SlideModel;
-import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import bhushan.org.GHRCEUSER.R;
 
 public class HomeFragment extends Fragment {
 
     private ImageView map;
+    private TextView marqueeTextView;
+    private DatabaseReference databaseReference;
+    private List<SpanInfo> spanInfoList;
+    private Handler handler;
+    private int currentIndex = 0;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
+        // Initialize Firebase Database reference
+        databaseReference = FirebaseDatabase.getInstance().getReference("marqueeText");
 
         ArrayList<SlideModel> imageList = new ArrayList<>(); // Create image list
 
-//        Notification
-        FirebaseMessaging.getInstance().subscribeToTopic("Home");
-
         // Add image slides
-//        imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/my-gpg-app.appspot.com/o/SliderImages%2FGHRCE1.jpg?alt=media&token=6367e435-559e-47ee-a6e4-7329535454c7&_gl=1*jfa0ha*_ga*MTM5NDUwNDgzMS4xNjc4MDI3ODcz*_ga_CW55HF8NVT*MTY5ODE0MDYwNC4xOS4xLjE2OTgxNDA5NzMuMjMuMC4w", ScaleTypes.CENTER_CROP));
-//        imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/my-gpg-app.appspot.com/o/SliderImages%2FGHRCE3.png?alt=media&token=a2654834-eb9f-4b3e-b851-49c916c8f0f3&_gl=1*v1rnq5*_ga*MTM5NDUwNDgzMS4xNjc4MDI3ODcz*_ga_CW55HF8NVT*MTY5ODE0MDYwNC4xOS4xLjE2OTgxNDEwNDYuNDcuMC4w", ScaleTypes.CENTER_CROP));
-//        imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/my-gpg-app.appspot.com/o/SliderImages%2FGHRCE4.png?alt=media&token=49f081a7-1ca8-410a-9c98-4e8788234a41&_gl=1*15s794s*_ga*MTM5NDUwNDgzMS4xNjc4MDI3ODcz*_ga_CW55HF8NVT*MTY5ODE0MDYwNC4xOS4xLjE2OTgxNDEwNzIuMjEuMC4w", ScaleTypes.CENTER_CROP));
-//        imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/my-gpg-app.appspot.com/o/SliderImages%2FGHRCE2.png?alt=media&token=13a100b8-0006-4c09-b03f-2234d5f5905b&_gl=1*u8pt92*_ga*MTM5NDUwNDgzMS4xNjc4MDI3ODcz*_ga_CW55HF8NVT*MTY5ODE0MDYwNC4xOS4xLjE2OTgxNDExMzAuNjAuMC4w", ScaleTypes.CENTER_CROP));
-//        imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/my-gpg-app.appspot.com/o/SliderImages%2Fsunset-3689760.jpg?alt=media&token=eb77c4de-8343-41be-ac36-2cbfb297417b", ScaleTypes.CENTER_CROP));
-//        imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/my-gpg-app.appspot.com/o/SliderImages%2Fgpgphoto2.jpg?alt=media&token=6d5adc67-a19c-4784-b90f-ea0db30ba1d0", ScaleTypes.CENTER_CROP));
         imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/my-ghrce-app.appspot.com/o/Headline%2Fclg2.jpg?alt=media&token=12272b75-916a-4e65-a592-2f968eddf1db", ScaleTypes.CENTER_CROP));
         imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/my-ghrce-app.appspot.com/o/Headline%2Ftech1.jpg?alt=media&token=81193a52-4e53-4abc-9c15-e205e08f8b21", ScaleTypes.CENTER_CROP));
         imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/my-ghrce-app.appspot.com/o/Headline%2Ftech2.jpg?alt=media&token=4449441c-328e-4b30-939e-27bfc87270d5", ScaleTypes.CENTER_CROP));
         imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/my-ghrce-app.appspot.com/o/Headline%2Ftech3.jpg?alt=media&token=0ef58d37-d4ec-4e97-bb46-26eefd35946b", ScaleTypes.CENTER_CROP));
         imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/my-ghrce-app.appspot.com/o/Headline%2Ftech4.jpg?alt=media&token=a559f168-6ccf-4873-92e8-24e27ad7a41f", ScaleTypes.CENTER_CROP));
         imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/my-ghrce-app.appspot.com/o/Headline%2Fclg1.jpg?alt=media&token=765f90d6-7027-4349-b43a-e7af138fd257", ScaleTypes.CENTER_CROP));
-//        imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/my-ghrce-app.appspot.com/o/Headline%2Fclg2.jpg?alt=media&token=12272b75-916a-4e65-a592-2f968eddf1db", ScaleTypes.CENTER_CROP));
 
         ImageSlider imageSlider = view.findViewById(R.id.image_slider);
         imageSlider.setImageList(imageList);
@@ -118,11 +129,103 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 openMap();
-
             }
         });
 
+        // Initialize Marquee TextView
+        marqueeTextView = view.findViewById(R.id.marquee_text);
+        setupMarquee();
+
+        // Initialize the Handler
+        handler = new Handler();
+
+        // Fetch and update marquee text from Firebase
+        fetchMarqueeText();
+
         return view;
+    }
+
+    private void setupMarquee() {
+        if (marqueeTextView != null) {
+            marqueeTextView.setSelected(true); // Ensure the marquee starts
+            marqueeTextView.setMovementMethod(LinkMovementMethod.getInstance()); // Make links clickable
+        }
+    }
+
+    private void fetchMarqueeText() {
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                spanInfoList = new ArrayList<>();
+
+                for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
+                    String text = childSnapshot.child("text").getValue(String.class);
+                    String link = childSnapshot.child("link").getValue(String.class);
+
+                    if (text != null && link != null) {
+                        spanInfoList.add(new SpanInfo(text, link));
+                    }
+                }
+
+                startMarquee();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                // Handle possible errors.
+            }
+        });
+    }
+
+    private void startMarquee() {
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (spanInfoList != null && !spanInfoList.isEmpty()) {
+                    SpanInfo spanInfo = spanInfoList.get(currentIndex);
+
+                    SpannableString spannableString = new SpannableString(spanInfo.text);
+                    ClickableSpan clickableSpan = new ClickableSpan() {
+                        @Override
+                        public void onClick(@NonNull View widget) {
+                            openLink(spanInfo.link);
+                        }
+
+                        @Override
+                        public void updateDrawState(@NonNull android.text.TextPaint ds) {
+                            ds.setUnderlineText(false);
+                            ds.setColor(Color.RED); // Set the text color to black or any color you want
+                        }
+                    };
+
+                    spannableString.setSpan(clickableSpan, 0, spanInfo.text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    marqueeTextView.setText(spannableString);
+
+                    currentIndex = (currentIndex + 1) % spanInfoList.size();
+                    marqueeTextView.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            marqueeTextView.setSelected(true);
+                        }
+                    });
+
+                    // Schedule the next update
+                    handler.postDelayed(this, getMarqueeDuration(spanInfo.text));
+                }
+            }
+        }, 0);
+    }
+
+    private long getMarqueeDuration(String text) {
+        // Estimate duration based on text length
+        // You can fine-tune this to match your marquee speed
+        return text.length() * 200; // Example: 200ms per character
+    }
+
+    private void openLink(String url) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
+        startActivity(intent);
     }
 
     private void openMap() {
@@ -130,9 +233,21 @@ public class HomeFragment extends Fragment {
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         intent.setPackage("com.google.android.apps.maps");
         startActivity(intent);
+    }
 
+    private static class SpanInfo {
+        String text;
+        String link;
+
+        SpanInfo(String text, String link) {
+            this.text = text;
+            this.link = link;
+        }
     }
 }
+
+
+
 
 
 

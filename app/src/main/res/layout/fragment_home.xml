@@ -23,6 +23,22 @@
                 app:iss_period="1000"
                 app:iss_delay="1000"/>
 
+            <!-- Marquee TextView -->
+            <TextView
+                android:id="@+id/marquee_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#DF0E0E"
+                android:textSize="18sp"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:ellipsize="marquee"
+                android:singleLine="true"
+                android:scrollHorizontally="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_margin="16dp"/>
+
+
             <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

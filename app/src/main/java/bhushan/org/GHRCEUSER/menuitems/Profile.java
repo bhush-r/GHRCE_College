@@ -139,8 +139,10 @@
 package bhushan.org.GHRCEUSER.menuitems;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -197,10 +199,29 @@ public class Profile extends AppCompatActivity {
         logout_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                openLogin();
+                // Create an AlertDialog
+                new AlertDialog.Builder(Profile.this)
+                        .setTitle("Log Out")
+                        .setMessage("Are you sure you want to log out?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // User clicked Yes, perform logout
+                                FirebaseAuth.getInstance().signOut();
+                                openLogin();
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // User clicked No, dismiss the dialog
+                                dialog.dismiss();
+                            }
+                        })
+                        .show();
             }
         });
+
 
         update_button.setOnClickListener(new View.OnClickListener() {
             @Override
