@@ -16,7 +16,10 @@ public class User {
     }
 
     // Getters and setters
-
+    public User(String branch, String name) {
+        this.branch = branch;
+        this.name = name;
+    }
     public String getName() {
         return name;
     }

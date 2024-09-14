@@ -27,9 +27,7 @@ import com.google.firebase.messaging.FirebaseMessaging;
 import java.util.Objects;
 
 import bhushan.org.GHRCEUSER.ChatGPT.Chatgpt;
-import bhushan.org.GHRCEUSER.Song.UserMusicApp;
 import bhushan.org.GHRCEUSER.authentication.LoginActivity;
-import bhushan.org.GHRCEUSER.chating.chat;
 import bhushan.org.GHRCEUSER.compile.compiler;
 import bhushan.org.GHRCEUSER.ebook.EbookActivity;
 import bhushan.org.GHRCEUSER.intership.Feedback;
@@ -188,7 +186,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (itemId == R.id.navigation_compiler) {
             startActivity(new Intent(this, compiler.class));
         } else if (itemId == R.id.navigation_chat) {
-            startActivity(new Intent(this, chat.class));
+            Toast.makeText(this, "Soon...", Toast.LENGTH_SHORT).show();
+            //startActivity(new Intent(this, ChatActivity.class));
         } else if (itemId == R.id.navigation_chatgpt) {
             startActivity(new Intent(this, Chatgpt.class));
         } else if (itemId == R.id.navigation_meditetion) {
