@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -19,6 +20,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="31">
+        <activity
+            android:name=".Chating.PersonalChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Chating.GroupChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".intership.CgpaActivity"
+            android:exported="false" />
         <activity
             android:name=".menuitems.UpdateProfileActivity"
             android:exported="false" />
@@ -33,10 +43,9 @@
             android:exported="false" />
         <activity
             android:name=".ChatGPT.Chatgpt"
-            android:exported="false" />
-        <activity
-            android:name=".chating.chat"
-            android:exported="true" />
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".Chating.chat" -->
+        <!-- android:exported="true" /> -->
         <activity
             android:name=".compile.compiler"
             android:exported="false" />
@@ -109,20 +118,33 @@
             android:exported="false">
 
             <!-- Add any necessary intent filters here if needed -->
-        </activity>
+        </activity> <!-- <activity -->
+        <!-- android:name=".SplashActivity" -->
+        <!-- android:exported="true" -->
+        <!-- android:theme="@style/SplashScreen" /> -->
+        <!-- <activity -->
+        <!-- android:name=".MainActivity" -->
+        <!-- android:exported="true"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
         <activity
-            android:name=".SplashScreen"
+            android:name=".SplashActivity"
             android:exported="true"
-            android:theme="@style/SplashScreen" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+            <!-- android:theme="@style/SplashScreen" -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
 
         <service
             android:name=".MyFirebaseMessagingService"

@@ -23,7 +23,7 @@
 //
 //import bhushan.org.GHRCEUSER.R;
 //import bhushan.org.GHRCEUSER.authentication.LoginActivity;
-//import bhushan.org.GHRCEUSER.chating.ChatActivity;
+//import bhushan.org.GHRCEUSER.Chating.ChatActivity;
 //
 //public class Profile extends AppCompatActivity {
 //
@@ -165,7 +165,7 @@
 //
 //import bhushan.org.GHRCEUSER.R;
 //import bhushan.org.GHRCEUSER.authentication.LoginActivity;
-//import bhushan.org.GHRCEUSER.chating.ChatActivity;
+//import bhushan.org.GHRCEUSER.Chating.ChatActivity;
 //
 //public class Profile extends AppCompatActivity {
 //
@@ -355,7 +355,7 @@ import java.util.Map;
 
 import bhushan.org.GHRCEUSER.R;
 import bhushan.org.GHRCEUSER.authentication.LoginActivity;
-//import bhushan.org.GHRCEUSER.chating.chat;
+//import bhushan.org.GHRCEUSER.Chating.chat;
 
 public class Profile extends AppCompatActivity {
 

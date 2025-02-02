@@ -20,7 +20,7 @@ public class IntershipActivity extends AppCompatActivity {
 
         TextView tvUsername = findViewById(R.id.tvUsernameHome);
         CardView cvStartQuiz = findViewById(R.id.cvStartQuiz);
-        CardView cvRule = findViewById(R.id.cvRule);
+        CardView cvCGPA = findViewById(R.id.cvCGPA);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle("Internship");
@@ -36,6 +36,13 @@ public class IntershipActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(IntershipActivity.this, activityInternOption.class));
+            }
+        });
+
+        cvCGPA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(IntershipActivity.this, CgpaActivity.class));
             }
         });
     }

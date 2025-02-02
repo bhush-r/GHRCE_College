@@ -79,9 +79,10 @@ import android.view.WindowManager;
 import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.github.barteksc.pdfviewer.PDFView;
-import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle;
+import  com.github.pdfviewer.PDFView;
+//import com.github.barteksc.pdfviewer.PDFView;
+//import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle;
+import com.github.pdfviewer.scroll.DefaultScrollHandle;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;

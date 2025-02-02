@@ -29,7 +29,7 @@
 //import java.util.UUID;
 //import bhushan.org.GHRCEUSER.MainActivity;
 //import bhushan.org.GHRCEUSER.R;
-//import bhushan.org.GHRCEUSER.chating.ChatActivity;
+//import bhushan.org.GHRCEUSER.Chating.ChatActivity;
 //
 //public class RegisterActivity extends AppCompatActivity {
 //

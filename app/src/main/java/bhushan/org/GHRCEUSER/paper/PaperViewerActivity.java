@@ -108,10 +108,13 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.github.barteksc.pdfviewer.PDFView;
-import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
-import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle;
+//
+//import com.github.barteksc.pdfviewer.PDFView;
+//import com.github.barteksc.pdfviewer.listener.OnLoadCompleteListener;
+//import com.github.barteksc.pdfviewer.scroll.DefaultScrollHandle;
+import com.github.pdfviewer.PDFView;
+import com.github.pdfviewer.listener.OnLoadCompleteListener;
+import com.github.pdfviewer.scroll.DefaultScrollHandle;
 
 import java.io.BufferedInputStream;
 import java.io.IOException;
