@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     tools:context=".paper.PaperViewerActivity">
 
     <ProgressBar
@@ -39,4 +40,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
+
+
+<!--    <com.google.android.gms.ads.AdView-->
+<!--        android:id="@+id/bannerAdView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        ads:adSize="BANNER"-->
+<!--        ads:adUnitId="ca-app-pub-2270115251422656/9983951208"/>-->
 </androidx.constraintlayout.widget.ConstraintLayout>
