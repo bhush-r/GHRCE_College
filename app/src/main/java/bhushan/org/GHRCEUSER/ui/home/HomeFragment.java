@@ -59,7 +59,6 @@
 //        }
 //    }
 //}
-
 package bhushan.org.GHRCEUSER.ui.home;
 
 import android.content.Intent;
@@ -110,9 +109,18 @@ public class HomeFragment extends Fragment {
         // Initialize Firebase Database reference
         databaseReference = FirebaseDatabase.getInstance().getReference("marqueeText");
 
-        ArrayList<SlideModel> imageList = new ArrayList<>(); // Create image list
+        setupImageSlider(view);
+        setupMap(view);
+        setupMarquee(view);
 
-        // Add image slides
+        handler = new Handler();
+        fetchMarqueeText();
+
+        return view;
+    }
+
+    private void setupImageSlider(View view) {
+        ArrayList<SlideModel> imageList = new ArrayList<>();
         imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/my-ghrce-app.appspot.com/o/Headline%2Fclg2.jpg?alt=media&token=12272b75-916a-4e65-a592-2f968eddf1db", ScaleTypes.CENTER_CROP));
         imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/my-ghrce-app.appspot.com/o/Headline%2Ftech1.jpg?alt=media&token=81193a52-4e53-4abc-9c15-e205e08f8b21", ScaleTypes.CENTER_CROP));
         imageList.add(new SlideModel("https://firebasestorage.googleapis.com/v0/b/my-ghrce-app.appspot.com/o/Headline%2Ftech2.jpg?alt=media&token=4449441c-328e-4b30-939e-27bfc87270d5", ScaleTypes.CENTER_CROP));
@@ -122,38 +130,21 @@ public class HomeFragment extends Fragment {
 
         ImageSlider imageSlider = view.findViewById(R.id.image_slider);
         imageSlider.setImageList(imageList);
-
-        // MapLink
-        map = view.findViewById(R.id.map);
-        map.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openMap();
-            }
-        });
-
-        // Initialize Marquee TextView
-        marqueeTextView = view.findViewById(R.id.marquee_text);
-        setupMarquee();
-
-        // Initialize the Handler
-        handler = new Handler();
-
-        // Fetch and update marquee text from Firebase
-        fetchMarqueeText();
-
-        return view;
     }
 
-    private void setupMarquee() {
-        if (marqueeTextView != null) {
-            marqueeTextView.setSelected(true); // Ensure the marquee starts
-            marqueeTextView.setMovementMethod(LinkMovementMethod.getInstance()); // Make links clickable
-        }
+    private void setupMap(View view) {
+        map = view.findViewById(R.id.map);
+        map.setOnClickListener(v -> openMap());
+    }
+
+    private void setupMarquee(View view) {
+        marqueeTextView = view.findViewById(R.id.marquee_text);
+        marqueeTextView.setSelected(true);
+        marqueeTextView.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
     private void fetchMarqueeText() {
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 spanInfoList = new ArrayList<>();
@@ -161,31 +152,28 @@ public class HomeFragment extends Fragment {
                 for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
                     String text = childSnapshot.child("text").getValue(String.class);
                     String link = childSnapshot.child("link").getValue(String.class);
-
                     if (text != null && link != null) {
                         spanInfoList.add(new SpanInfo(text, link));
                     }
                 }
-
                 startMarquee();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                // Handle possible errors.
             }
         });
     }
 
     private void startMarquee() {
-        handler.postDelayed(new Runnable() {
+        handler.removeCallbacksAndMessages(null);
+        handler.post(new Runnable() {
             @Override
             public void run() {
                 if (spanInfoList != null && !spanInfoList.isEmpty()) {
                     SpanInfo spanInfo = spanInfoList.get(currentIndex);
-
                     SpannableString spannableString = new SpannableString(spanInfo.text);
-                    ClickableSpan clickableSpan = new ClickableSpan() {
+                    spannableString.setSpan(new ClickableSpan() {
                         @Override
                         public void onClick(@NonNull View widget) {
                             openLink(spanInfo.link);
@@ -194,51 +182,36 @@ public class HomeFragment extends Fragment {
                         @Override
                         public void updateDrawState(@NonNull android.text.TextPaint ds) {
                             ds.setUnderlineText(false);
-                            ds.setColor(Color.RED); // Set the text color to black or any color you want
+                            ds.setColor(Color.RED);
                         }
-                    };
+                    }, 0, spanInfo.text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
-                    spannableString.setSpan(clickableSpan, 0, spanInfo.text.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
                     marqueeTextView.setText(spannableString);
-
+                    marqueeTextView.setSelected(true);
                     currentIndex = (currentIndex + 1) % spanInfoList.size();
-                    marqueeTextView.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            marqueeTextView.setSelected(true);
-                        }
-                    });
-
-                    // Schedule the next update
                     handler.postDelayed(this, getMarqueeDuration(spanInfo.text));
                 }
             }
-        }, 0);
+        });
     }
 
     private long getMarqueeDuration(String text) {
-        // Estimate duration based on text length
-        // You can fine-tune this to match your marquee speed
-        return text.length() * 200; // Example: 200ms per character
+        return Math.max(text.length() * 150, 3000);
     }
 
     private void openLink(String url) {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(url));
-        startActivity(intent);
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
     }
 
     private void openMap() {
-        Uri uri = Uri.parse("geo:0, 0?q=G. H. Raisoni College of Engineering");
+        Uri uri = Uri.parse("geo:0,0?q=G. H. Raisoni College of Engineering");
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         intent.setPackage("com.google.android.apps.maps");
         startActivity(intent);
     }
 
     private static class SpanInfo {
-        String text;
-        String link;
-
+        String text, link;
         SpanInfo(String text, String link) {
             this.text = text;
             this.link = link;
