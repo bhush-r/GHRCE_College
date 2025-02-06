@@ -72,9 +72,12 @@ public class Profile extends AppCompatActivity {
                 .setNegativeButton("No", (dialog, which) -> dialog.dismiss())
                 .show());
 
-        update_button.setOnClickListener(v ->
-                Toast.makeText(Profile.this, "Coming soon...", Toast.LENGTH_SHORT).show()
-        );
+        update_button.setOnClickListener(v -> {
+            //Intent intent = new Intent(Profile.this, UpdateProfileActivity.class);
+            //startActivity(intent);
+            Toast.makeText(Profile.this, "Coming soon...", Toast.LENGTH_SHORT).show();
+        });
+
 
         // Get current user
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
